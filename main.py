@@ -7,7 +7,7 @@ from utils.nasa_power import fetch_nasa_power_data
 
 app = FastAPI(title="Solar Irradiance Forecast API")
 
-@app.get("/v1/irradiance/forecast")
+@app.get("/v1/irradiance/historical", summary="Get historical solar irradiance data")
 def get_irradiance(
     lat: float = Query(...),
     lon: float = Query(...),

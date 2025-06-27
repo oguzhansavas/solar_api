@@ -1,6 +1,6 @@
-# Solar Irradiance Forecast API
+# Solar Irradiance Historical API
 
-This is a FastAPI-based microservice that provides access to historical and forecasted solar irradiance data using NASA POWER.
+This is a FastAPI-based microservice that provides access to historical solar irradiance data using NASA POWER.
 
 ## Features
 
@@ -8,7 +8,7 @@ This is a FastAPI-based microservice that provides access to historical and fore
 - Input coordinates (latitude, longitude) and time range
 - Simple RESTful endpoints for easy integration
 - Returns data in JSON format
-- Supports both historical and forecast queries
+- Supports historical queries
 
 ## Usage
 
@@ -24,19 +24,20 @@ This is a FastAPI-based microservice that provides access to historical and fore
 
 3. **Example request:**
    ```
-   GET /irradiance?lat=40.0&lon=29.0&start=2024-06-01T00:00:00Z&end=2024-06-02T00:00:00Z
+   GET /v1/irradiance/historical?lat=40.0&lon=29.0&start=20240601&end=20240602
    ```
 
 ## Endpoints
 
-- `/irradiance`: Get solar irradiance and weather data for a given location and time range.
+- `/v1/irradiance/historical`: Get historical solar irradiance and weather data for a given location and time range.
 
 ## Input Parameters
 
 - `lat` (float): Latitude
 - `lon` (float): Longitude
-- `start` (ISO8601): Start datetime
-- `end` (ISO8601): End datetime
+- `start` (YYYYMMDD): Start date in YYYYMMDD format
+- `end` (YYYYMMDD): End date in YYYYMMDD format
+- `include_poa` (bool, optional): Include plane of array calculation (default: False)
 
 ## Output
 

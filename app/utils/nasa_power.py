@@ -10,6 +10,7 @@ USER_PARAM_MAP = {
     "relative_humidity": "RH2M",
     "precipitation": "PRECTOTCORR",
     "surface_pressure": "PS",
+    "cloud_cover": "CLOUD_AMT"
 }
 
 def fetch_nasa_power_data(

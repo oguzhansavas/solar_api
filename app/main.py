@@ -108,7 +108,9 @@ def forecast_irradiance(
     return {
         "location": {"lat": lat, "lon": lon},
         "unit": "W/m²",
-        "forecast": dict(zip(X.index.strftime("%Y-%m-%d %H:%M"), y_pred_irradiance.round(2)))
+        "forecast": {
+            k: float(v) for k, v in zip(X.index.strftime("%Y-%m-%d %H:%M"), y_pred_irradiance.round(2))
+        }
     }
 
 if __name__ == "__main__":

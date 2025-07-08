@@ -9,7 +9,6 @@ USER_PARAM_MAP = {
     "wind_speed": "WS2M",
     "relative_humidity": "RH2M",
     "precipitation": "PRECTOTCORR",
-    "surface_pressure": "PS",
     "cloud_cover": "CLOUD_AMT"
 }
 

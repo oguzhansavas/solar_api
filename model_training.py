@@ -22,10 +22,8 @@ OUTPUT_MODEL_PATH = "app/models/irradiance_forecast_model.pkl"
 
 # --- Functions ---
 def fetch_data(lat, lon, start_date, end_date, community="SB"):
-    # Fetch all crucial parameters using user-friendly names
     params = [
         "total_irradiance",
-        "clear_sky_irradiance",
         "temperature",
         "relative_humidity",
         "precipitation",

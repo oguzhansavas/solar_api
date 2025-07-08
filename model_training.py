@@ -50,8 +50,6 @@ def fetch_data(lat, lon, start_date, end_date, community="SB"):
 
 def add_features(df, lat, lon):
     df = df.copy()
-    df["CSI"] = df["total_irradiance"] / df["clear_sky_irradiance"]
-    df["CSI"] = df["CSI"].clip(0, 1.5)
     df["hour"] = df.index.hour
     df["dayofyear"] = df.index.dayofyear
     df["month"] = df.index.month
@@ -61,11 +59,9 @@ def add_features(df, lat, lon):
     df["solar_zenith"] = solpos["zenith"].values
     df["lat"] = lat
     df["lon"] = lon
-    # Add lag features for CSI and cloud cover
+    # Only lag features for cloud cover (since you can forecast it)
     for lag in [1, 2, 3, 24, 48, 72]:
-        df[f"CSI_lag{lag}"] = df["CSI"].shift(lag)
         df[f"cloud_cover_lag{lag}"] = df["cloud_cover"].shift(lag)
-    df = df.dropna(subset=["CSI", "solar_zenith", "sin_doy", "cos_doy"])
     return df
 
 # --- Aggregate training data ---
@@ -74,28 +70,28 @@ for loc in LOCATIONS:
     print(f"Fetching data for {loc['city']}...")
     raw = fetch_data(loc["lat"], loc["lon"], START_DATE, END_DATE)
     enriched = add_features(raw, loc["lat"], loc["lon"])
-    enriched["CSI_target"] = enriched["CSI"].shift(-24)
+    # Predict total irradiance directly (target is total_irradiance shifted -24h for day-ahead)
+    enriched["irradiance_target"] = enriched["total_irradiance"].shift(-24)
     all_data.append(enriched)
 
 # --- Combine and clean ---
 df_all = pd.concat(all_data)
-df_all = df_all.dropna(subset=["CSI_target"])
+df_all = df_all.dropna(subset=["irradiance_target"])
 
 # --- Train model ---
 features = [
     "temperature", "relative_humidity", "precipitation", "cloud_cover",
     "solar_zenith", "sin_doy", "cos_doy", "lat", "lon",
-    "CSI_lag1", "CSI_lag2", "CSI_lag3", "CSI_lag24", "CSI_lag48", "CSI_lag72",
-    "cloud_cover_lag1", "cloud_cover_lag2", "cloud_cover_lag3", "cloud_cover_lag24", "cloud_cover_lag48", "cloud_cover_lag72"
+    "cloud_cover_lag1", "cloud_cover_lag2", "cloud_cover_lag3",
+    "cloud_cover_lag24", "cloud_cover_lag48", "cloud_cover_lag72"
 ]
 df_all = df_all.sort_index()
-df_all = df_all.dropna(subset=features + ["CSI_target"])
-#print(df_all.head())
+df_all = df_all.dropna(subset=features + ["irradiance_target"])
 split_point = int(len(df_all) * 0.95)
 X_train = df_all.iloc[:split_point][features]
-y_train = df_all.iloc[:split_point]["CSI_target"]
+y_train = df_all.iloc[:split_point]["irradiance_target"]
 X_val = df_all.iloc[split_point:][features]
-y_val = df_all.iloc[split_point:]["CSI_target"]
+y_val = df_all.iloc[split_point:]["irradiance_target"]
 
 # --- Hyperparameter tuning ---
 param_grid = {
@@ -112,22 +108,15 @@ print(f"Best params: {grid_search.best_params_}")
 model = grid_search.best_estimator_
 
 # --- Evaluation ---
-y_pred_csi = model.predict(X_val)
-# Multiply predicted CSI by clear-sky irradiance to get predicted total irradiance
-clear_sky_irradiance_val = df_all.iloc[split_point:]["clear_sky_irradiance"]
-y_pred_irradiance = y_pred_csi * clear_sky_irradiance_val
-y_true_irradiance = df_all.iloc[split_point:]["total_irradiance"]
-
-rmse_csi = np.sqrt(mean_squared_error(y_val, y_pred_csi))
-rmse_irradiance = np.sqrt(mean_squared_error(y_true_irradiance, y_pred_irradiance))
-print(f"Validation RMSE (CSI): {rmse_csi:.4f}")
+y_pred_irradiance = model.predict(X_val)
+rmse_irradiance = np.sqrt(mean_squared_error(y_val, y_pred_irradiance))
 print(f"Validation RMSE (Total Irradiance): {rmse_irradiance:.4f}")
 
 # Visualize predictions: Total Irradiance
 import matplotlib.pyplot as plt
 plt.figure(figsize=(12, 6))
-plt.plot(y_true_irradiance.index, y_true_irradiance, label='Actual Irradiance', color='blue')
-plt.plot(y_true_irradiance.index, y_pred_irradiance, label='Predicted Irradiance', color='orange')
+plt.plot(y_val.index, y_val, label='Actual Irradiance', color='blue')
+plt.plot(y_val.index, y_pred_irradiance, label='Predicted Irradiance', color='orange')
 plt.title('Total Irradiance Prediction vs Actual')
 plt.xlabel('Date')
 plt.ylabel('Total Irradiance (W/m²)')

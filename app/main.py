@@ -15,7 +15,7 @@ import requests
 
 app = FastAPI(title="Solar Irradiance Forecast API")
 
-MODEL_PATH = "app/models/irradiance_forecast_model.pkl"
+MODEL_PATH = "app/models/solar_irradiance_forecast_model.pkl"
 model = joblib.load(MODEL_PATH)
 
 def fetch_open_meteo_forecast(lat, lon, start, end):

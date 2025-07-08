@@ -21,7 +21,7 @@ model = joblib.load(MODEL_PATH)
 def fetch_open_meteo_forecast(lat, lon, start, end):
     start_dt = datetime.strptime(start, "%Y%m%d%H")
     end_dt = datetime.strptime(end, "%Y%m%d%H")
-    if (end_dt - start_dt).days > 7:
+    if (end_dt - start_dt).days > 10:
         raise HTTPException(status_code=400, detail="Forecast horizon cannot exceed 7 days.")
     url = (
         f"https://api.open-meteo.com/v1/forecast"
@@ -45,11 +45,6 @@ def fetch_open_meteo_forecast(lat, lon, start, end):
     df["time"] = pd.to_datetime(df["time"])
     df = df.set_index("time")
     return df
-
-def fetch_clear_sky_irradiance(index, lat, lon):
-    location = Location(lat, lon)
-    clearsky = location.get_clearsky(index, model='ineichen')
-    return clearsky["ghi"]
 
 def add_forecast_features(df, lat, lon):
     df = df.copy()
@@ -95,7 +90,14 @@ def forecast_irradiance(
     start: str = Query(..., description="Forecast start in YYYYMMDDHH"),
     end: str = Query(..., description="Forecast end in YYYYMMDDHH (max 7 days after start)"),
 ):
-    df_weather = fetch_open_meteo_forecast(lat, lon, start, end)
+    # Adjust start time for lag features
+    start_dt = datetime.strptime(start, "%Y%m%d%H")
+    lag_hours = 72
+    fetch_start_dt = start_dt - timedelta(hours=lag_hours)
+    fetch_start = fetch_start_dt.strftime("%Y%m%d%H")
+
+    # Fetch weather data from fetch_start to end
+    df_weather = fetch_open_meteo_forecast(lat, lon, fetch_start, end)
     df_feat = add_forecast_features(df_weather, lat, lon)
     features = [
         "temperature", "relative_humidity", "precipitation", "cloud_cover",
@@ -105,6 +107,18 @@ def forecast_irradiance(
     ]
     X = df_feat[features].dropna()
     y_pred_irradiance = model.predict(X)
+
+    # Only return results from the requested start time
+    mask = X.index >= start_dt
+    X = X.loc[mask]
+    y_pred_irradiance = y_pred_irradiance[mask]
+    # Set negative predictions to zero
+    y_pred_irradiance = np.maximum(y_pred_irradiance, 0)
+
+    # Set irradiance to zero at night (when sun is below horizon)
+    solar_zenith = X["solar_zenith"].values
+    y_pred_irradiance = np.where(solar_zenith > 90, 0, y_pred_irradiance)
+
     return {
         "location": {"lat": lat, "lon": lon},
         "unit": "W/m²",

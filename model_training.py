@@ -13,12 +13,22 @@ from app.utils.nasa_power import fetch_nasa_power_data
 
 # --- Config ---
 LOCATIONS = [
-    {"city": "Amsterdam", "lat": 52.3676, "lon": 4.9041}
+    {"city": "Amsterdam", "lat": 52.3676, "lon": 4.9041},
+    {"city": "Rotterdam", "lat": 51.9225, "lon": 4.4792},
+    {"city": "Groningen", "lat": 53.2194, "lon": 6.5665},
+    {"city": "Eindhoven", "lat": 51.4416, "lon": 5.4697},
+    {"city": "Brussels", "lat": 50.8503, "lon": 4.3517},
+    {"city": "Antwerp", "lat": 51.2211, "lon": 4.4213},
+    {"city": "Bruges", "lat": 51.2093, "lon": 3.2247},
+    {"city": "Liège", "lat": 50.6326, "lon": 5.5797},
+    {"city": "Luxembourg City", "lat": 49.6118, "lon": 6.1319},
+    {"city": "Ettelbruck", "lat": 49.8667, "lon": 6.1667},
+    {"city": "Esch-sur-Alzette", "lat": 49.5000, "lon": 5.9833}
 ]
 
 START_DATE = "2022-01-01"
-END_DATE = "2025-03-30"
-OUTPUT_MODEL_PATH = "app/models/irradiance_forecast_model.pkl"
+END_DATE = "2025-04-29"
+OUTPUT_MODEL_PATH = "app/models/benelux_forecast_model.pkl"
 
 # --- Functions ---
 def fetch_data(lat, lon, start_date, end_date, community="SB"):
@@ -85,7 +95,7 @@ features = [
 ]
 df_all = df_all.sort_index()
 df_all = df_all.dropna(subset=features + ["irradiance_target"])
-split_point = int(len(df_all) * 0.95)
+split_point = int(len(df_all) * 0.99)
 X_train = df_all.iloc[:split_point][features]
 y_train = df_all.iloc[:split_point]["irradiance_target"]
 X_val = df_all.iloc[split_point:][features]

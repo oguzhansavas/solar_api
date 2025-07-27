@@ -45,6 +45,7 @@ GET /v1/irradiance/forecast?lat=52.3676&lon=4.9041&start=2025070800&end=20250714
 - `lon` (float): Longitude
 - `start` (YYYYMMDDHH): Forecast start datetime (UTC)
 - `end` (YYYYMMDDHH): Forecast end datetime (UTC, max 7 days after start)
+- **Note:** The forecast endpoint currently supports only locations within the Benelux region (Netherlands, Belgium, Luxembourg).
 
 ---
 
@@ -87,3 +88,4 @@ GET /v1/irradiance/forecast?lat=52.3676&lon=4.9041&start=2025070800&end=20250714
 ## Notes
 
 - Forecasts are set to zero at night (when the sun is below the horizon).
+- **Forecasting is currently limited to the Benelux region.**

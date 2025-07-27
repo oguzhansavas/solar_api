@@ -1,10 +1,10 @@
-# Solar Irradiance API
+# Solar Irradiance Forecast API
 
 A FastAPI microservice for retrieving **historical** solar irradiance and weather data from NASA POWER, and for **forecasting** solar irradiance using machine learning and Open-Meteo weather forecasts.
 
 ## Features
 
-- Fetch hourly historical data for total/clear-sky irradiance, temperature, wind speed, humidity, precipitation, and pressure
+- Fetch hourly historical data for total/clear-sky irradiance, temperature, wind speed, humidity, precipitation, and cloud cover
 - Forecast hourly total irradiance up to 7 days ahead using weather forecasts and solar geometry
 - User-friendly parameter names (e.g., `total_irradiance`, `temperature`)
 - Specify coordinates, time range, and NASA community (`RE` or `SB`)
@@ -36,8 +36,8 @@ GET /v1/irradiance/forecast?lat=52.3676&lon=4.9041&start=2025070800&end=20250714
 - `lon` (float): Longitude
 - `start` (YYYYMMDD): Start date
 - `end` (YYYYMMDD): End date
-- `parameters` (str): One of `total_irradiance`, `clear_sky_irradiance`, `temperature`, `wind_speed`, `relative_humidity`, `precipitation`, `surface_pressure`
-- `community` (str): `RE` or `SB`
+- `parameters` (str): One of `total_irradiance`, `clear_sky_irradiance`, `temperature`, `wind_speed`, `relative_humidity`, `precipitation`, `cloud_cover`
+- `community` (str, optional): `RE` or `SB`
 
 ### Forecast Endpoint
 

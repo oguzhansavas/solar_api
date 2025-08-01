@@ -30,6 +30,15 @@ google_site_verification: # fill in to your verification string
 # Theme and appearance
 remote_theme: cotes2020/jekyll-theme-chirpy
 
+# Theme settings
+theme_mode: # [light|dark], empty means the theme respects the system color mode preference
+
+# Favicon settings
+favicon: # path to the favicon, /assets/favicon.ico or /assets/img/favicons/
+
+# Avatar settings  
+avatar: # /assets/img/avatar.jpg
+
 # Build settings
 timezone: Europe/Amsterdam
 

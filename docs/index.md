@@ -9,10 +9,10 @@ description: Fast, accurate solar irradiance data and forecasting for renewable 
 Fast, accurate solar irradiance data and forecasting for renewable energy applications.
 
 <div class="btn-group">
-  <a href="{{ '/getting-started.html' | relative_url }}" class="btn btn-primary">
+  <a href="{{ '/getting-started/' | relative_url }}" class="btn btn-primary">
     <i class="fas fa-rocket"></i> Get Started
   </a>
-  <a href="{{ '/api-reference.html' | relative_url }}" class="btn btn-outline-primary">
+  <a href="{{ '/api-reference/' | relative_url }}" class="btn btn-outline-primary">
     <i class="fas fa-book"></i> API Reference
   </a>
 </div>

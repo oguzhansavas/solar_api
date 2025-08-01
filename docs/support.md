@@ -106,10 +106,10 @@ For technical issues, bugs, questions, or feature requests, feel free to reach o
 
 | Resource | Description | Link |
 |----------|-------------|------|
-| **Getting Started** | Quick start guide with basic examples | [View Guide]({{ '/getting-started.html' | relative_url }}) |
-| **API Reference** | Complete endpoint documentation | [View Reference]({{ '/api-reference.html' | relative_url }}) |
-| **Examples** | Real-world use cases and code samples | [View Examples]({{ '/examples.html' | relative_url }}) |
-| **Coverage Info** | Geographic coverage and limitations | [View Coverage]({{ '/coverage.html' | relative_url }}) |
+| **Getting Started** | Quick start guide with basic examples | [View Guide]({{ '/getting-started/' | relative_url }}) |
+| **API Reference** | Complete endpoint documentation | [View Reference]({{ '/api-reference/' | relative_url }}) |
+| **Examples** | Real-world use cases and code samples | [View Examples]({{ '/examples/' | relative_url }}) |
+| **Coverage Info** | Geographic coverage and limitations | [View Coverage]({{ '/coverage/' | relative_url }}) |
 
 ### 🔧 Development Tools
 

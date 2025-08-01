@@ -1,53 +1,41 @@
 ---
-layout: page
+layout: home
 title: Solar Irradiance Forecast API
 description: Fast, accurate solar irradiance data and forecasting for renewable energy applications
 ---
 
-<div class="hero-section">
-  <div class="hero-content">
-    <h1 class="hero-title">☀️ Solar Irradiance Forecast API</h1>
-    <p class="hero-description">Fast, accurate solar irradiance data and forecasting for renewable energy applications</p>
-    <div class="hero-buttons">
-      <a href="{{ '/getting-started.html' | relative_url }}" class="btn btn-primary">Get Started</a>
-      <a href="{{ '/api-reference.html' | relative_url }}" class="btn btn-secondary">API Reference</a>
-    </div>
-  </div>
+## 🚀 Solar Irradiance Forecast API
+
+Fast, accurate solar irradiance data and forecasting for renewable energy applications.
+
+<div class="btn-group">
+  <a href="{{ '/getting-started/' | relative_url }}" class="btn btn-primary">
+    <i class="fas fa-rocket"></i> Get Started
+  </a>
+  <a href="{{ '/api-reference/' | relative_url }}" class="btn btn-outline-primary">
+    <i class="fas fa-book"></i> API Reference
+  </a>
 </div>
 
-## 🚀 Key Features
+## Key Features
 
-<div class="features-grid">
-  <div class="feature-card">
-    <h3>📊 Historical Data</h3>
-    <p>Access hourly historical solar irradiance, temperature, wind speed, humidity, precipitation, and cloud cover data from NASA POWER worldwide.</p>
-  </div>
-  
-  <div class="feature-card">
-    <h3>🔮 AI-Powered Forecasting</h3>
-    <p>Get accurate 7-day solar irradiance forecasts using machine learning models trained on weather data and solar geometry.</p>
-  </div>
-  
-  <div class="feature-card">
-    <h3>🌍 Global Coverage</h3>
-    <p>Historical data available globally. Forecasting currently optimized for the Benelux region (Netherlands, Belgium, Luxembourg).</p>
-  </div>
-  
-  <div class="feature-card">
-    <h3>⚡ Fast & Reliable</h3>
-    <p>Built with FastAPI for high performance. RESTful JSON API with comprehensive error handling and validation.</p>
-  </div>
-  
-  <div class="feature-card">
-    <h3>📱 Developer Friendly</h3>
-    <p>Simple HTTP GET requests with intuitive parameter names. No authentication required for public data access.</p>
-  </div>
-  
-  <div class="feature-card">
-    <h3>🔧 Production Ready</h3>
-    <p>Deployed on Render with automatic scaling. Comprehensive documentation and code examples included.</p>
-  </div>
-</div>
+> **📊 Historical Data** - Access hourly historical solar irradiance, temperature, wind speed, humidity, precipitation, and cloud cover data from NASA POWER worldwide.
+{: .prompt-info}
+
+> **🔮 AI-Powered Forecasting** - Get accurate 7-day solar irradiance forecasts using machine learning models trained on weather data and solar geometry.
+{: .prompt-tip}
+
+> **🌍 Global Coverage** - Historical data available globally. Forecasting currently optimized for the Benelux region (Netherlands, Belgium, Luxembourg).
+{: .prompt-note}
+
+> **⚡ Fast & Reliable** - Built with FastAPI for high performance. RESTful JSON API with comprehensive error handling and validation.
+{: .prompt-info}
+
+> **📱 Developer Friendly** - Simple HTTP GET requests with intuitive parameter names. No authentication required for public data access.
+{: .prompt-tip}
+
+> **🔧 Production Ready** - Deployed on Render with automatic scaling. Comprehensive documentation and code examples included.
+{: .prompt-note}
 
 ## 🔗 Quick Example
 
@@ -75,25 +63,41 @@ curl "{{ site.api_base_url }}/v1/irradiance/historical?lat={{ site.example_lat }
 
 ## 🎯 Use Cases
 
-<div class="use-cases">
-  <div class="use-case">
-    <h4>🏠 Solar Panel Optimization</h4>
-    <p>Optimize solar panel placement and energy storage systems using historical irradiance data and accurate forecasts.</p>
+<div class="row">
+  <div class="col-md-6">
+    <div class="card">
+      <div class="card-body">
+        <h5 class="card-title">🏠 Solar Panel Optimization</h5>
+        <p class="card-text">Optimize solar panel placement and energy storage systems using historical irradiance data and accurate forecasts.</p>
+      </div>
+    </div>
   </div>
-  
-  <div class="use-case">
-    <h4>⚡ Energy Trading</h4>
-    <p>Make informed energy trading decisions with precise solar generation forecasts for the next 7 days.</p>
+  <div class="col-md-6">
+    <div class="card">
+      <div class="card-body">
+        <h5 class="card-title">⚡ Energy Trading</h5>
+        <p class="card-text">Make informed energy trading decisions with precise solar generation forecasts for the next 7 days.</p>
+      </div>
+    </div>
   </div>
-  
-  <div class="use-case">
-    <h4>🌱 Research & Analytics</h4>
-    <p>Analyze solar potential, climate patterns, and renewable energy trends using comprehensive historical datasets.</p>
+</div>
+
+<div class="row mt-3">
+  <div class="col-md-6">
+    <div class="card">
+      <div class="card-body">
+        <h5 class="card-title">🌱 Research & Analytics</h5>
+        <p class="card-text">Analyze solar potential, climate patterns, and renewable energy trends using comprehensive historical datasets.</p>
+      </div>
+    </div>
   </div>
-  
-  <div class="use-case">
-    <h4>📊 Grid Management</h4>
-    <p>Predict solar energy output for better grid stability and renewable energy integration planning.</p>
+  <div class="col-md-6">
+    <div class="card">
+      <div class="card-body">
+        <h5 class="card-title">📊 Grid Management</h5>
+        <p class="card-text">Predict solar energy output for better grid stability and renewable energy integration planning.</p>
+      </div>
+    </div>
   </div>
 </div>
 
@@ -101,21 +105,23 @@ curl "{{ site.api_base_url }}/v1/irradiance/historical?lat={{ site.example_lat }
 
 | Endpoint | Purpose | Coverage |
 |----------|---------|----------|
-| [`/v1/irradiance/historical`]({{ '/api-reference.html#historical' | relative_url }}) | Historical solar irradiance and weather data | Global (NASA POWER) |
-| [`/v1/irradiance/forecast`]({{ '/api-reference.html#forecast' | relative_url }}) | 7-day solar irradiance forecasts | Benelux region |
+| [`/v1/irradiance/historical`]({{ '/getting-started/' | relative_url }}#historical-data) | Historical solar irradiance and weather data | Global (NASA POWER) |
+| [`/v1/irradiance/forecast`]({{ '/getting-started/' | relative_url }}#forecast-data) | 7-day solar irradiance forecasts | Benelux region |
 
 ## 🌟 Why Choose Our API?
 
 - **Accuracy**: ML models trained on extensive historical data
-- **Speed**: Sub-second response times for most queries
+- **Speed**: Sub-second response times for most queries  
 - **No Limits**: Free access for reasonable usage patterns
 - **Support**: Comprehensive documentation and community support
 
 ## 🚀 Ready to Get Started?
 
-<div class="cta-section">
-  <p>Start integrating solar irradiance data into your applications today!</p>
-  <a href="{{ '/getting-started.html' | relative_url }}" class="btn btn-large">View Documentation →</a>
+<div class="text-center mt-4">
+  <p class="lead">Start integrating solar irradiance data into your applications today!</p>
+  <a href="{{ '/getting-started/' | relative_url }}" class="btn btn-primary btn-lg">
+    <i class="fas fa-arrow-right"></i> View Documentation
+  </a>
 </div>
 
 <script>

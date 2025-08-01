@@ -1,8 +1,11 @@
 ---
-layout: page
+layout: page  
 title: Support & Community
+icon: fas fa-life-ring
+order: 5
 permalink: /support/
 description: Get help, report issues, and reach out for technical support and collaboration.
+toc: true
 ---
 
 ## 🤝 Getting Help
@@ -16,13 +19,12 @@ We're committed to providing support for developers using the Solar Irradiance F
 ### 🐛 Bug Reports & Feature Requests & Questions
 For technical issues, bugs, questions, or feature requests, feel free to reach out by email:
 
-<div class="feature-card">
-  <h3>Email Support</h3>
-  <p>Reach out directly for business-related questions or private support needs.</p>
-  <a href="mailto:oguzhansavas359@gmail.com" class="btn btn-primary">
-    📧 Email Us
-  </a>
-</div>
+> **📧 Email Support**
+> 
+> Reach out directly for business-related questions or private support needs.
+> 
+> [✉️ Contact Us](mailto:oguzhansavas359@gmail.com){: .btn .btn-primary}
+{: .prompt-info}
 
 ---
 
@@ -30,66 +32,71 @@ For technical issues, bugs, questions, or feature requests, feel free to reach o
 
 ### Common Issues & Solutions
 
-<div class="param-card">
-  <h4>❌ "Invalid coordinates" Error</h4>
-  <p><strong>Problem:</strong> Getting validation errors for latitude/longitude values.</p>
-  <p><strong>Solution:</strong></p>
-  <ul>
-    <li>Ensure latitude is between -90 and 90</li>
-    <li>Ensure longitude is between -180 and 180</li>
-    <li>Use decimal degrees format (e.g., 52.3676, not 52°22'3.36")</li>
-  </ul>
-  <p><strong>Example:</strong></p>
-  <pre><code># ✅ Correct
-lat=52.3676&lon=4.9041
+> **❌ "Invalid coordinates" Error**
+> 
+> **Problem:** Getting validation errors for latitude/longitude values.
+> 
+> **Solution:**
+> - Ensure latitude is between -90 and 90
+> - Ensure longitude is between -180 and 180
+> - Use decimal degrees format (e.g., 52.3676, not 52°22'3.36")
+> 
+> **Example:**
+> ```bash
+> # ✅ Correct
+> lat=52.3676&lon=4.9041
+> 
+> # ❌ Incorrect  
+> lat=92.3676&lon=4.9041  # Latitude > 90
+> ```
+{: .prompt-warning}
 
-# ❌ Incorrect  
-lat=92.3676&lon=4.9041  # Latitude > 90</code></pre>
-</div>
+> **🌍 "Forecast not available" Error**
+> 
+> **Problem:** Forecast endpoint returns location not supported error.
+> 
+> **Solution:**
+> - Check if your coordinates are within the Benelux region
+> - Use the [coverage page]({{ '/coverage/' | relative_url }}) to verify location support
+> - For locations outside Benelux, use the historical endpoint instead
+> 
+> **Coverage Check:**
+> ```bash
+> # Netherlands: lat 50.7-53.6, lon 3.2-7.2
+> # Belgium: lat 49.5-51.5, lon 2.5-6.4  
+> # Luxembourg: lat 49.4-50.2, lon 5.7-6.5
+> ```
+{: .prompt-warning}
 
-<div class="param-card">
-  <h4>🌍 "Forecast not available" Error</h4>
-  <p><strong>Problem:</strong> Forecast endpoint returns location not supported error.</p>
-  <p><strong>Solution:</strong></p>
-  <ul>
-    <li>Check if your coordinates are within the Benelux region</li>
-    <li>Use the <a href="{{ '/coverage.html' | relative_url }}">coverage page</a> to verify location support</li>
-    <li>For locations outside Benelux, use the historical endpoint instead</li>
-  </ul>
-  <p><strong>Coverage Check:</strong></p>
-  <pre><code># Netherlands: lat 50.7-53.6, lon 3.2-7.2
-# Belgium: lat 49.5-51.5, lon 2.5-6.4  
-# Luxembourg: lat 49.4-50.2, lon 5.7-6.5</code></pre>
-</div>
+> **📅 Date Format Errors**
+> 
+> **Problem:** Date parameter format is incorrect.
+> 
+> **Solution:**
+> - Historical endpoint: Use YYYYMMDD format (e.g., 20240101)
+> - Forecast endpoint: Use YYYYMMDDHH format (e.g., 2025070800)
+> - All dates should be in UTC timezone
+> 
+> **Examples:**
+> ```bash
+> # Historical - January 1, 2024
+> start=20240101&end=20240102
+> 
+> # Forecast - July 8, 2025 at 08:00 UTC
+> start=2025070800&end=2025070900
+> ```
+{: .prompt-info}
 
-<div class="param-card">
-  <h4>📅 Date Format Errors</h4>
-  <p><strong>Problem:</strong> Date parameter format is incorrect.</p>
-  <p><strong>Solution:</strong></p>
-  <ul>
-    <li>Historical endpoint: Use YYYYMMDD format (e.g., 20240101)</li>
-    <li>Forecast endpoint: Use YYYYMMDDHH format (e.g., 2025070800)</li>
-    <li>All dates should be in UTC timezone</li>
-  </ul>
-  <p><strong>Examples:</strong></p>
-  <pre><code># Historical - January 1, 2024
-start=20240101&end=20240102
-
-# Forecast - July 8, 2025 at 08:00 UTC
-start=2025070800&end=2025070900</code></pre>
-</div>
-
-<div class="param-card">
-  <h4>⚡ Slow Response Times</h4>
-  <p><strong>Problem:</strong> API requests are taking too long.</p>
-  <p><strong>Solutions:</strong></p>
-  <ul>
-    <li>Reduce date range for large historical requests</li>
-    <li>Implement request caching for frequently accessed data</li>
-    <li>Use appropriate timeout values in your HTTP client</li>
-    <li>Consider making parallel requests for different locations</li>
-  </ul>
-</div>
+> **⚡ Slow Response Times**
+> 
+> **Problem:** API requests are taking too long.
+> 
+> **Solutions:**
+> - Reduce date range for large historical requests
+> - Implement request caching for frequently accessed data
+> - Use appropriate timeout values in your HTTP client
+> - Consider making parallel requests for different locations
+{: .prompt-tip}
 
 ---
 
@@ -99,10 +106,10 @@ start=2025070800&end=2025070900</code></pre>
 
 | Resource | Description | Link |
 |----------|-------------|------|
-| **Getting Started** | Quick start guide with basic examples | [View Guide]({{ '/getting-started.html' | relative_url }}) |
-| **API Reference** | Complete endpoint documentation | [View Reference]({{ '/api-reference.html' | relative_url }}) |
-| **Examples** | Real-world use cases and code samples | [View Examples]({{ '/examples.html' | relative_url }}) |
-| **Coverage Info** | Geographic coverage and limitations | [View Coverage]({{ '/coverage.html' | relative_url }}) |
+| **Getting Started** | Quick start guide with basic examples | [View Guide]({{ '/getting-started/' | relative_url }}) |
+| **API Reference** | Complete endpoint documentation | [View Reference]({{ '/api-reference/' | relative_url }}) |
+| **Examples** | Real-world use cases and code samples | [View Examples]({{ '/examples/' | relative_url }}) |
+| **Coverage Info** | Geographic coverage and limitations | [View Coverage]({{ '/coverage/' | relative_url }}) |
 
 ### 🔧 Development Tools
 

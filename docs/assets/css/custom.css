@@ -1,0 +1,341 @@
+---
+---
+
+@import "minima";
+
+/* Solar Theme Color Palette */
+:root {
+  --solar-yellow: #FFD700;
+  --solar-orange: #FF8C00;
+  --solar-blue: #1E90FF;
+  --solar-green: #32CD32;
+  --solar-dark: #2C3E50;
+  --solar-light: #F8F9FA;
+  --solar-gradient: linear-gradient(135deg, var(--solar-yellow) 0%, var(--solar-orange) 100%);
+  --shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  --border-radius: 8px;
+}
+
+/* Hero Section */
+.hero-section {
+  background: var(--solar-gradient);
+  color: white;
+  padding: 4rem 0;
+  text-align: center;
+  margin: -2rem -15px 3rem;
+  border-radius: 0 0 var(--border-radius) var(--border-radius);
+}
+
+.hero-content {
+  max-width: 800px;
+  margin: 0 auto;
+  padding: 0 1rem;
+}
+
+.hero-title {
+  font-size: 3rem;
+  font-weight: 700;
+  margin-bottom: 1rem;
+  text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.3);
+}
+
+.hero-description {
+  font-size: 1.2rem;
+  margin-bottom: 2rem;
+  opacity: 0.95;
+}
+
+.hero-buttons {
+  display: flex;
+  gap: 1rem;
+  justify-content: center;
+  flex-wrap: wrap;
+}
+
+/* Buttons */
+.btn {
+  padding: 0.75rem 1.5rem;
+  border-radius: var(--border-radius);
+  text-decoration: none;
+  font-weight: 600;
+  transition: all 0.3s ease;
+  display: inline-block;
+  border: 2px solid transparent;
+}
+
+.btn-primary {
+  background-color: white;
+  color: var(--solar-orange);
+  border-color: white;
+}
+
+.btn-primary:hover {
+  background-color: var(--solar-orange);
+  color: white;
+  transform: translateY(-2px);
+  box-shadow: var(--shadow);
+}
+
+.btn-secondary {
+  background-color: transparent;
+  color: white;
+  border-color: white;
+}
+
+.btn-secondary:hover {
+  background-color: white;
+  color: var(--solar-orange);
+  transform: translateY(-2px);
+  box-shadow: var(--shadow);
+}
+
+.btn-large {
+  padding: 1rem 2rem;
+  font-size: 1.1rem;
+}
+
+/* Feature Grid */
+.features-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  gap: 2rem;
+  margin: 3rem 0;
+}
+
+.feature-card {
+  background: white;
+  padding: 2rem;
+  border-radius: var(--border-radius);
+  box-shadow: var(--shadow);
+  border-left: 4px solid var(--solar-orange);
+  transition: transform 0.3s ease;
+}
+
+.feature-card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 8px 15px rgba(0, 0, 0, 0.15);
+}
+
+.feature-card h3 {
+  color: var(--solar-dark);
+  margin-bottom: 1rem;
+  font-size: 1.3rem;
+}
+
+/* Use Cases */
+.use-cases {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  gap: 1.5rem;
+  margin: 2rem 0;
+}
+
+.use-case {
+  background: var(--solar-light);
+  padding: 1.5rem;
+  border-radius: var(--border-radius);
+  border: 1px solid #e9ecef;
+}
+
+.use-case h4 {
+  color: var(--solar-orange);
+  margin-bottom: 0.5rem;
+}
+
+/* Code Blocks */
+pre {
+  background: var(--solar-dark) !important;
+  color: white !important;
+  border-radius: var(--border-radius);
+  position: relative;
+  overflow-x: auto;
+}
+
+code {
+  background: var(--solar-light);
+  padding: 0.2rem 0.4rem;
+  border-radius: 4px;
+  font-size: 0.9rem;
+}
+
+pre code {
+  background: transparent;
+  padding: 0;
+}
+
+/* Copy Button */
+.copy-btn {
+  background: var(--solar-blue);
+  color: white;
+  border: none;
+  padding: 0.5rem 1rem;
+  border-radius: var(--border-radius);
+  cursor: pointer;
+  font-size: 0.9rem;
+  margin-top: 0.5rem;
+  transition: background-color 0.3s ease;
+}
+
+.copy-btn:hover {
+  background: #0D7ED8;
+}
+
+/* Tables */
+table {
+  width: 100%;
+  border-collapse: collapse;
+  margin: 2rem 0;
+  background: white;
+  border-radius: var(--border-radius);
+  overflow: hidden;
+  box-shadow: var(--shadow);
+}
+
+table th {
+  background: var(--solar-gradient);
+  color: white;
+  padding: 1rem;
+  text-align: left;
+}
+
+table td {
+  padding: 1rem;
+  border-bottom: 1px solid #e9ecef;
+}
+
+table tr:last-child td {
+  border-bottom: none;
+}
+
+table tr:nth-child(even) {
+  background: var(--solar-light);
+}
+
+/* CTA Section */
+.cta-section {
+  background: var(--solar-light);
+  padding: 3rem 2rem;
+  border-radius: var(--border-radius);
+  text-align: center;
+  margin: 3rem 0;
+  border: 2px solid var(--solar-yellow);
+}
+
+/* Site Header Customization */
+.site-header {
+  background: white;
+  border-bottom: 3px solid var(--solar-orange);
+  box-shadow: var(--shadow);
+}
+
+.site-title {
+  color: var(--solar-dark) !important;
+  font-weight: 700;
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+}
+
+.site-icon {
+  font-size: 1.5rem;
+}
+
+.site-nav .page-link {
+  color: var(--solar-dark);
+  transition: color 0.3s ease;
+}
+
+.site-nav .page-link:hover {
+  color: var(--solar-orange);
+}
+
+.github-icon {
+  margin-right: 0.3rem;
+  vertical-align: middle;
+}
+
+/* Footer */
+.site-footer {
+  background: var(--solar-dark);
+  color: white;
+}
+
+.footer-heading {
+  color: var(--solar-yellow);
+}
+
+.footer-links a {
+  color: var(--solar-yellow);
+  text-decoration: none;
+}
+
+.footer-links a:hover {
+  color: white;
+}
+
+/* Parameter Cards */
+.param-card {
+  background: white;
+  border: 1px solid #e9ecef;
+  border-radius: var(--border-radius);
+  padding: 1.5rem;
+  margin: 1rem 0;
+  border-left: 4px solid var(--solar-blue);
+}
+
+.param-card h4 {
+  color: var(--solar-dark);
+  margin-bottom: 0.5rem;
+}
+
+.param-type {
+  background: var(--solar-blue);
+  color: white;
+  padding: 0.2rem 0.5rem;
+  border-radius: 4px;
+  font-size: 0.8rem;
+  font-weight: 600;
+  margin-left: 0.5rem;
+}
+
+.param-required {
+  background: var(--solar-orange);
+  color: white;
+  padding: 0.2rem 0.5rem;
+  border-radius: 4px;
+  font-size: 0.8rem;
+  font-weight: 600;
+  margin-left: 0.5rem;
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+  .hero-title {
+    font-size: 2rem;
+  }
+  
+  .hero-buttons {
+    flex-direction: column;
+    align-items: center;
+  }
+  
+  .features-grid {
+    grid-template-columns: 1fr;
+  }
+  
+  .use-cases {
+    grid-template-columns: 1fr;
+  }
+  
+  .hero-section {
+    margin-left: -15px;
+    margin-right: -15px;
+  }
+}
+
+/* Syntax Highlighting Custom Colors */
+.highlight .c { color: #999; } /* Comment */
+.highlight .k { color: var(--solar-blue); } /* Keyword */
+.highlight .s { color: var(--solar-green); } /* String */
+.highlight .n { color: white; } /* Name */
+.highlight .p { color: #ccc; } /* Punctuation */

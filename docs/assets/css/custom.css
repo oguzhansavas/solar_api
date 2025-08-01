@@ -1,7 +1,7 @@
 ---
 ---
 
-@import "minima";
+/* Solar Theme Integration with Chirpy */
 
 /* Solar Theme Color Palette */
 :root {
@@ -16,28 +16,30 @@
   --border-radius: 8px;
 }
 
-.wrapper {
-    max-width: 100% !important;
-    margin-right: auto;
-    margin-left: auto;
-    padding-right: 30px;
-    padding-left: 30px;
+/* Override Chirpy's default colors with solar theme */
+:root {
+  /* Override Chirpy's primary colors */
+  --main-bg: var(--solar-light);
+  --card-bg: #fff;
+  --text-color: var(--solar-dark);
+  --heading-color: var(--solar-dark);
+  --link-color: var(--solar-blue);
+  --link-hover-color: var(--solar-orange);
 }
 
-/* Hero Section */
+/* Hero Section - adapted for Chirpy */
 .hero-section {
   background: var(--solar-gradient);
   color: white;
-  padding: 4rem 0;
+  padding: 4rem 2rem;
   text-align: center;
-  margin: -2rem -15px 3rem;
+  margin: -2rem -2rem 3rem -2rem;
   border-radius: 0 0 var(--border-radius) var(--border-radius);
 }
 
 .hero-content {
   max-width: 1200px;
   margin: 0 auto;
-  padding: 0 1rem;
 }
 
 .hero-title {
@@ -150,7 +152,7 @@
   margin-bottom: 0.5rem;
 }
 
-/* Code Blocks */
+/* Code Blocks - Enhanced for Chirpy */
 pre {
   background: var(--solar-dark) !important;
   color: white !important;
@@ -229,57 +231,6 @@ table tr:nth-child(even) {
   border: 2px solid var(--solar-yellow);
 }
 
-/* Site Header Customization */
-.site-header {
-  background: white;
-  border-bottom: 3px solid var(--solar-orange);
-  box-shadow: var(--shadow);
-}
-
-.site-title {
-  color: var(--solar-dark) !important;
-  font-weight: 700;
-  display: flex;
-  align-items: center;
-  gap: 0.5rem;
-}
-
-.site-icon {
-  font-size: 1.5rem;
-}
-
-.site-nav {
-  max-width: 1200px; /* or any value you want */
-  margin: 0 auto;
-}
-
-.site-nav .page-link {
-  color: var(--solar-dark);
-  transition: color 0.3s ease;
-}
-
-.site-nav .page-link:hover {
-  color: var(--solar-orange);
-}
-
-/* Footer */
-.site-footer {
-  background: var(--solar-dark);
-}
-
-.footer-heading {
-  color: var(--solar-yellow);
-}
-
-.footer-links a {
-  color: var(--solar-yellow);
-  text-decoration: none;
-}
-
-.footer-links a:hover {
-  color: white;
-}
-
 /* Parameter Cards */
 .param-card {
   background: white;
@@ -315,6 +266,20 @@ table tr:nth-child(even) {
   margin-left: 0.5rem;
 }
 
+/* Chirpy-specific overrides */
+#sidebar {
+  --sidebar-bg: var(--solar-dark);
+}
+
+/* Navigation overrides */
+.navbar-nav .nav-link {
+  color: var(--solar-dark) !important;
+}
+
+.navbar-nav .nav-link:hover {
+  color: var(--solar-orange) !important;
+}
+
 /* Responsive Design */
 @media (max-width: 768px) {
   .hero-title {
@@ -335,8 +300,9 @@ table tr:nth-child(even) {
   }
   
   .hero-section {
-    margin-left: -15px;
-    margin-right: -15px;
+    margin-left: -1rem;
+    margin-right: -1rem;
+    padding: 3rem 1rem;
   }
 }
 

@@ -2,49 +2,24 @@
 layout: page
 title: Support & Community
 permalink: /support/
-description: Get help, report issues, and connect with the Solar Irradiance Forecast API community for technical support and collaboration.
+description: Get help, report issues, and reach out for technical support and collaboration.
 ---
 
 ## 🤝 Getting Help
 
-We're committed to providing excellent support for developers using the Solar Irradiance Forecast API. Whether you're just getting started or building complex applications, we're here to help.
+We're committed to providing support for developers using the Solar Irradiance Forecast API. Whether you're just getting started or building complex applications, we're here to help.
 
 ---
 
-## 📞 Support Channels
+## 📞 Support
 
-### 🐛 Bug Reports & Feature Requests
-For technical issues, bugs, or feature requests, please use our GitHub repository:
-
-<div class="feature-card">
-  <h3>GitHub Issues</h3>
-  <p>Report bugs, request features, or ask technical questions through our GitHub repository.</p>
-  <a href="https://github.com/oguzhansavas/solar_api/issues" class="btn btn-primary" target="_blank">
-    🐛 Report an Issue
-  </a>
-  <a href="https://github.com/oguzhansavas/solar_api/issues/new?template=feature_request.md" class="btn btn-secondary" target="_blank">
-    ✨ Request Feature
-  </a>
-</div>
-
-### 💬 Community Discussions
-Join our community discussions for general questions, use case sharing, and collaboration:
-
-<div class="feature-card">
-  <h3>GitHub Discussions</h3>
-  <p>Connect with other developers, share your projects, and get community support.</p>
-  <a href="https://github.com/oguzhansavas/solar_api/discussions" class="btn btn-primary" target="_blank">
-    💬 Join Discussions
-  </a>
-</div>
-
-### 📧 Direct Contact
-For business inquiries, partnerships, or sensitive issues:
+### 🐛 Bug Reports & Feature Requests & Questions
+For technical issues, bugs, questions, or feature requests, feel free to reach out by email:
 
 <div class="feature-card">
   <h3>Email Support</h3>
   <p>Reach out directly for business-related questions or private support needs.</p>
-  <a href="mailto:oguzhan.savas@example.com" class="btn btn-primary">
+  <a href="mailto:oguzhansavas359@gmail.com" class="btn btn-primary">
     📧 Email Us
   </a>
 </div>
@@ -116,17 +91,6 @@ start=2025070800&end=2025070900</code></pre>
   </ul>
 </div>
 
-<div class="param-card">
-  <h4>💾 Large Data Responses</h4>
-  <p><strong>Problem:</strong> Response size is larger than expected.</p>
-  <p><strong>Solutions:</strong></p>
-  <ul>
-    <li>Request smaller date ranges and combine client-side</li>
-    <li>Use compression in your HTTP client (gzip)</li>
-    <li>Process data as streams rather than loading entirely into memory</li>
-  </ul>
-</div>
-
 ---
 
 ## 📖 Documentation & Resources
@@ -180,32 +144,32 @@ from datetime import datetime
 def debug_api_call(endpoint, params):
     """Debug API calls with detailed error information"""
     
-    print(f"🔍 Debugging API call to {endpoint}")
-    print(f"📋 Parameters: {params}")
+    print(f"Debugging API call to {endpoint}")
+    print(f"Parameters: {params}")
     
     # Validate parameters before sending
     validation_errors = validate_params(endpoint, params)
     if validation_errors:
-        print(f"❌ Parameter validation errors:")
+        print(f"Parameter validation errors:")
         for error in validation_errors:
             print(f"   - {error}")
         return None
     
     try:
         # Make the request
-        print(f"🌐 Sending request...")
+        print(f"Sending request...")
         response = requests.get(endpoint, params=params, timeout=30)
         
-        print(f"📈 Response status: {response.status_code}")
-        print(f"⏱️  Response time: {response.elapsed.total_seconds():.2f}s")
-        print(f"📏 Response size: {len(response.content)} bytes")
+        print(f"Response status: {response.status_code}")
+        print(f"Response time: {response.elapsed.total_seconds():.2f}s")
+        print(f"Response size: {len(response.content)} bytes")
         
         if response.status_code == 200:
             data = response.json()
-            print(f"✅ Success! Got {len(data.get('irradiance', data.get('forecast', {})))} data points")
+            print(f"Success! Got {len(data.get('irradiance', data.get('forecast', {})))} data points")
             return data
         else:
-            print(f"❌ Error response:")
+            print(f"Error response:")
             try:
                 error_data = response.json()
                 print(f"   Detail: {error_data.get('detail', 'Unknown error')}")
@@ -214,13 +178,13 @@ def debug_api_call(endpoint, params):
             return None
             
     except requests.exceptions.Timeout:
-        print("⏰ Request timed out (>30s)")
+        print("Request timed out (>30s)")
     except requests.exceptions.ConnectionError:
         print("🔌 Connection error - check internet connection")
     except requests.exceptions.RequestException as e:
-        print(f"🚫 Request failed: {e}")
+        print(f"Request failed: {e}")
     except json.JSONDecodeError:
-        print("📄 Invalid JSON response")
+        print("Invalid JSON response")
     
     return None
 
@@ -299,13 +263,8 @@ We welcome contributions from the community! Here's how you can help:
 
 <div class="use-cases">
   <div class="use-case">
-    <h4>📝 Documentation</h4>
-    <p>Help improve our documentation, add examples, or translate content to other languages.</p>
-  </div>
-  
-  <div class="use-case">
     <h4>🐛 Bug Reports</h4>
-    <p>Report bugs with detailed reproduction steps and expected vs actual behavior.</p>
+    <p>Report bugs with reproduction steps and expected vs actual behavior.</p>
   </div>
   
   <div class="use-case">
@@ -321,10 +280,8 @@ We welcome contributions from the community! Here's how you can help:
 
 ### Contribution Guidelines
 
-1. **Check existing issues** before creating new ones
-2. **Provide detailed information** including error messages, request/response examples
-3. **Use clear, descriptive titles** for issues and PRs
-4. **Follow the code of conduct** and be respectful to all community members
+1. **Provide detailed information** including error messages, request/response examples
+2. **Use clear, descriptive titles** for issues and PRs
 
 ---
 
@@ -341,7 +298,7 @@ Brief description of the issue
 ## Steps to Reproduce
 1. Step one
 2. Step two
-3. Step three
+...
 
 ## Expected Behavior
 What you expected to happen
@@ -398,30 +355,10 @@ Share your project with the community! We love to see how developers are using t
 
 If you've built something interesting with our API, we'd love to feature it:
 
-1. Share your project in [GitHub Discussions](https://github.com/oguzhansavas/solar_api/discussions)
+1. Share your project with us in an Email
 2. Include screenshots, code samples, or demo links
 3. Describe your use case and how the API helped
 4. We'll feature outstanding projects in our documentation!
-
----
-
-## 📈 Service Level Agreement
-
-### Availability
-- **Uptime Target**: 99.9% (less than 8.77 hours downtime per year)
-- **Maintenance Windows**: Announced 48 hours in advance
-- **Status Updates**: Real-time status at [{{ site.api_base_url }}/health]({{ site.api_base_url }}/health)
-
-### Response Times
-- **Historical Endpoint**: Target 95th percentile < 1 second
-- **Forecast Endpoint**: Target 95th percentile < 2 seconds
-- **Health Check**: Target 95th percentile < 100ms
-
-### Support Response Times
-- **Critical Issues**: 4 hours
-- **Bug Reports**: 24 hours
-- **Feature Requests**: 72 hours
-- **General Questions**: 48 hours
 
 ---
 

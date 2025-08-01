@@ -1,0 +1,59 @@
+<footer class="site-footer h-card">
+  <data class="u-url" href="{{ "/" | relative_url }}"></data>
+
+  <div class="wrapper">
+
+    <h2 class="footer-heading">{{ site.title | escape }}</h2>
+
+    <div class="footer-col-wrapper">
+      <div class="footer-col footer-col-1">
+        <ul class="contact-list">
+          <li class="p-name">
+            {%- if site.author -%}
+              {{ site.author.name | escape }}
+            {%- else -%}
+              {{ site.title | escape }}
+            {%- endif -%}
+            </li>
+            {%- if site.author.email -%}
+            <li><a class="u-email" href="mailto:{{ site.author.email }}">{{ site.author.email }}</a></li>
+            {%- endif -%}
+        </ul>
+      </div>
+
+      <div class="footer-col footer-col-2">
+        <ul class="social-media-list">
+          {%- if site.github_username -%}
+          <li>
+            {%- include social.html username=site.github_username platform="github" -%}
+          </li>
+          {%- endif -%}
+          {%- if site.twitter_username -%}
+          <li>
+            {%- include social.html username=site.twitter_username platform="twitter" -%}
+          </li>
+          {%- endif -%}
+          <li>
+            <a href="https://github.com/oguzhansavas/solar_api">
+              <svg class="svg-icon">
+                <use xlink:href="{{ '/assets/minima-social-icons.svg#github' | relative_url }}"></use>
+              </svg>
+              <span class="username">Source Code</span>
+            </a>
+          </li>
+        </ul>
+      </div>
+
+      <div class="footer-col footer-col-3">
+        <p>{{- site.description | escape -}}</p>
+        <p class="footer-links">
+          <a href="{{ '/api-reference.html' | relative_url }}">API Reference</a> |
+          <a href="{{ '/examples.html' | relative_url }}">Examples</a> |
+          <a href="{{ '/support.html' | relative_url }}">Support</a>
+        </p>
+      </div>
+    </div>
+
+  </div>
+
+</footer>

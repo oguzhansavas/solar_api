@@ -204,10 +204,12 @@ All endpoints require these basic parameters:
 
 ### Best Practices
 
-1. **Use appropriate date ranges**: Don't request more data than needed
-2. **Cache responses**: Store frequently accessed data locally
-3. **Handle errors gracefully**: Always check response status codes
-4. **Respect the service**: Avoid excessive concurrent requests
+> **📋 Best Practices**
+> 1. **Use appropriate date ranges**: Don't request more data than needed
+> 2. **Cache responses**: Store frequently accessed data locally
+> 3. **Handle errors gracefully**: Always check response status codes
+> 4. **Respect the service**: Avoid excessive concurrent requests
+{: .prompt-info}
 
 ### Error Handling
 
@@ -234,18 +236,20 @@ def safe_api_call(url, params):
 
 Now that you're familiar with the basics:
 
-1. [**Explore API Reference**]({{ '/api-reference.html' | relative_url }}) - Detailed endpoint documentation
-2. [**View Examples**]({{ '/examples.html' | relative_url }}) - Real-world use cases and code samples  
-3. [**Check Coverage**]({{ '/coverage.html' | relative_url }}) - Understand regional limitations
-4. [**Get Support**]({{ '/support.html' | relative_url }}) - Community and technical support
+1. [**📚 Explore API Reference**]({{ '/api-reference/' | relative_url }}) - Detailed endpoint documentation
+2. [**💻 View Examples**]({{ '/examples/' | relative_url }}) - Real-world use cases and code samples  
+3. [**🌍 Check Coverage**]({{ '/coverage/' | relative_url }}) - Understand regional limitations
+4. [**🆘 Get Support**]({{ '/support/' | relative_url }}) - Community and technical support
 
 ## 💡 Tips for Success
 
-- Start with historical data to understand the API structure
-- Use the health endpoint (`/health`) to verify API availability
-- Test your coordinates with small date ranges first
-- Consider time zones: all data is in UTC
-- For production use, implement proper error handling and retries
+> **💡 Pro Tips**
+> - Start with historical data to understand the API structure
+> - Use the health endpoint (`/health`) to verify API availability
+> - Test your coordinates with small date ranges first
+> - Consider time zones: all data is in UTC
+> - For production use, implement proper error handling and retries
+{: .prompt-tip}
 
 <script>
 function copyToClipboard(text) {

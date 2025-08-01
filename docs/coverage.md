@@ -19,15 +19,12 @@ The Solar Irradiance Forecast API provides different coverage areas for historic
 ### Global Availability
 Historical solar irradiance and weather data is available **worldwide** through NASA POWER database integration.
 
-<div class="feature-card">
-  <h3>🌐 Worldwide Coverage</h3>
-  <ul>
-    <li><strong>Latitude Range:</strong> -90° to +90° (South Pole to North Pole)</li>
-    <li><strong>Longitude Range:</strong> -180° to +180° (Complete global coverage)</li>
-    <li><strong>Resolution:</strong> 0.5° x 0.625° (approximately 50km x 50km grid)</li>
-    <li><strong>Data Source:</strong> NASA POWER (Prediction of Worldwide Energy Resources)</li>
-  </ul>
-</div>
+> **🌐 Worldwide Coverage**
+> - **Latitude Range:** -90° to +90° (South Pole to North Pole)
+> - **Longitude Range:** -180° to +180° (Complete global coverage)
+> - **Resolution:** 0.5° x 0.625° (approximately 50km x 50km grid)
+> - **Data Source:** NASA POWER (Prediction of Worldwide Energy Resources)
+{: .prompt-info}
 
 ### Available Parameters
 All locations worldwide support the following parameters:
@@ -77,16 +74,15 @@ curl "{{ site.api_base_url }}/v1/irradiance/historical?lat=-33.8688&lon=151.2093
 ### Benelux Region Only
 Solar irradiance forecasting is currently **limited to the Benelux region** due to model training and validation constraints.
 
-<div class="feature-card" style="border-left-color: #FF8C00;">
-  <h3>🇳🇱🇧🇪🇱🇺 Benelux Coverage Area</h3>
-  <p><strong>Supported Countries:</strong></p>
-  <ul>
-    <li><strong>Netherlands:</strong> Latitude 50.7° to 53.6°, Longitude 3.2° to 7.2°</li>
-    <li><strong>Belgium:</strong> Latitude 49.5° to 51.5°, Longitude 2.5° to 6.4°</li>
-    <li><strong>Luxembourg:</strong> Latitude 49.4° to 50.2°, Longitude 5.7° to 6.5°</li>
-  </ul>
-  <p><strong>Model Optimization:</strong> Machine learning models trained specifically on Benelux weather patterns and solar geometry.</p>
-</div>
+> **🇳🇱🇧🇪🇱🇺 Benelux Coverage Area**
+> 
+> **Supported Countries:**
+> - **Netherlands:** Latitude 50.7° to 53.6°, Longitude 3.2° to 7.2°
+> - **Belgium:** Latitude 49.5° to 51.5°, Longitude 2.5° to 6.4°
+> - **Luxembourg:** Latitude 49.4° to 50.2°, Longitude 5.7° to 6.5°
+> 
+> **Model Optimization:** Machine learning models trained specifically on Benelux weather patterns and solar geometry.
+{: .prompt-warning}
 
 ### Why Benelux Only?
 

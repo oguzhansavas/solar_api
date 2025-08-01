@@ -1,23 +1,16 @@
-# Solar Irradiance Forecast API Documentation
+# Chirpy Jekyll Theme
 
-This directory contains the Jekyll-based documentation website for the Solar Irradiance Forecast API.
+This site uses the [Chirpy Jekyll theme](https://github.com/cotes2020/jekyll-theme-chirpy) - a minimal, responsive and feature-rich Jekyll theme for technical writing.
 
-## Structure
+## Getting Started
 
-- `index.md` - Landing page with API overview
-- `getting-started.md` - Quick start guide
-- `api-reference.md` - Complete API documentation
-- `examples.md` - Real-world examples and use cases
-- `coverage.md` - Geographic coverage information
-- `support.md` - Support and community resources
+### Prerequisites
 
-## Development
-
-The documentation is built automatically by GitHub Actions and deployed to GitHub Pages.
+Follow the instructions in the [Jekyll Docs](https://jekyllrb.com/docs/installation/) to complete the installation of the basic environment. [Git](https://git-scm.com/) also needs to be installed.
 
 ### Local Development
 
-To run the documentation locally with the Chirpy theme:
+To run the site locally:
 
 ```bash
 cd docs
@@ -25,38 +18,82 @@ bundle install
 bundle exec jekyll serve
 ```
 
-**Note**: The site uses the Chirpy Jekyll theme which includes additional features like:
-- Sidebar navigation
-- Search functionality
-- Dark/light mode toggle
-- Enhanced responsive design
-
-If you encounter build issues, ensure you have Ruby 3.0+ and the latest version of Bundler installed.
+The site will be available at `http://localhost:4000`.
 
 ### Deployment
 
-The site is automatically deployed when changes are pushed to the main branch.
+The site is automatically deployed to GitHub Pages when changes are pushed to the main branch.
 
-## Theme
+## Writing Posts
 
-The documentation uses the **Chirpy Jekyll theme** which provides:
-- Modern, responsive design with sidebar navigation
-- Dark/light mode toggle
-- Built-in search functionality
-- Professional layout optimized for technical documentation
-- Custom solar-themed styling integrated with Chirpy's design system
+### Creating a New Post
 
-### Theme Features
-- Clean, professional appearance
-- Mobile-responsive design
-- Integrated table of contents
-- Syntax highlighting for code examples
-- Copy-to-clipboard functionality for code blocks
-- SEO optimized
+Create a new file in the `_posts` directory with the filename format:
 
-### Custom Solar Theme Integration
-The site maintains its solar energy branding with:
-- Solar gradient colors (yellow/orange)
-- Custom hero sections and feature cards
-- Solar-themed color scheme throughout
-- Professional grid layouts for documentation
+```
+YYYY-MM-DD-title.md
+```
+
+For example: `2023-08-01-my-first-post.md`
+
+### Post Front Matter
+
+Each post should start with YAML front matter:
+
+```yaml
+---
+title: Your Post Title
+date: 2023-08-01 10:00:00 +0800
+categories: [Category1, Category2]
+tags: [tag1, tag2, tag3]
+pin: false
+---
+```
+
+### Common Front Matter Options
+
+- `title`: The title of your post
+- `date`: Publication date and time
+- `categories`: Post categories (max 2 levels)
+- `tags`: Post tags
+- `pin`: Set to `true` to pin the post to the top
+- `math`: Set to `true` to enable math expressions
+- `mermaid`: Set to `true` to enable mermaid diagrams
+- `image`: Post thumbnail image
+
+## Customization
+
+### Site Configuration
+
+Edit `_config.yml` to customize:
+
+- Site title and description
+- Author information
+- Social media links
+- Google Analytics
+- Comments system
+- Theme settings
+
+### Navigation
+
+The theme automatically generates navigation from your posts' categories and tags. You can also create custom pages by adding markdown files to the root directory.
+
+## Theme Features
+
+- **Responsive Design**: Looks great on desktop, tablet, and mobile
+- **Dark/Light Mode**: Automatic theme switching with manual toggle
+- **Search**: Built-in search functionality
+- **TOC**: Automatic table of contents for posts
+- **Categories & Tags**: Organized content browsing
+- **Archives**: Chronological post organization
+- **SEO**: Search engine optimized
+- **Syntax Highlighting**: Code syntax highlighting with copy button
+- **Math**: LaTeX math expression support
+- **Mermaid**: Diagram and flowchart support
+
+## Resources
+
+- [Chirpy Theme Documentation](https://github.com/cotes2020/jekyll-theme-chirpy)
+- [Jekyll Documentation](https://jekyllrb.com/docs/)
+- [Markdown Guide](https://www.markdownguide.org/)
+- [Demo Site](https://chirpy.cotes.page/)

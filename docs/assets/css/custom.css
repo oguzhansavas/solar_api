@@ -27,7 +27,7 @@
 }
 
 .hero-content {
-  max-width: 1000px;
+  max-width: 1200px;
   margin: 0 auto;
   padding: 0 1rem;
 }
@@ -238,6 +238,11 @@ table tr:nth-child(even) {
 
 .site-icon {
   font-size: 1.5rem;
+}
+
+.site-nav {
+  max-width: 1200px; /* or any value you want */
+  margin: 0 auto;
 }
 
 .site-nav .page-link {

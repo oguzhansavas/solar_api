@@ -108,7 +108,6 @@ curl "{{ site.api_base_url }}/v1/irradiance/historical?lat={{ site.example_lat }
 
 - **Accuracy**: ML models trained on extensive historical data
 - **Speed**: Sub-second response times for most queries
-- **Reliability**: 99.9% uptime with automatic failover
 - **No Limits**: Free access for reasonable usage patterns
 - **Support**: Comprehensive documentation and community support
 

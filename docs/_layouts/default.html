@@ -1,20 +1,56 @@
 <!DOCTYPE html>
-<html lang="{{ page.lang | default: site.lang | default: "en" }}">
-
-{%- include head.html -%}
-
+<html lang="{{ page.lang | default: site.lang | default: 'en' }}">
+<head>
+  {%- include head.html -%}
+  <style>
+    body {
+      margin: 0;
+      font-family: 'Segoe UI', 'Roboto', 'Helvetica Neue', Arial, sans-serif;
+      background: #f4f6fb;
+      color: #222;
+    }
+    .site-header, .site-footer {
+      background: #232946;
+      color: #fff;
+      padding: 1.5rem 0;
+      text-align: center;
+    }
+    .page-content {
+      max-width: 900px;
+      margin: 2rem auto;
+      background: #fff;
+      border-radius: 12px;
+      box-shadow: 0 4px 24px rgba(40, 60, 90, 0.07);
+      padding: 2.5rem 2rem;
+      min-height: 60vh;
+    }
+    a {
+      color: #0074d9;
+      text-decoration: none;
+      transition: color 0.2s;
+    }
+    a:hover {
+      color: #005fa3;
+      text-decoration: underline;
+    }
+    @media (max-width: 600px) {
+      .page-content {
+        padding: 1rem 0.5rem;
+      }
+    }
+  </style>
+</head>
 <body>
-
-  {%- include header.html -%}
-
+  <header class="site-header">
+    {%- include header.html -%}
+  </header>
   <main class="page-content" aria-label="Content">
     <div class="wrapper">
       {{ content }}
     </div>
   </main>
-
-  {%- include footer.html -%}
-
+  <footer class="site-footer">
+    {%- include footer.html -%}
+  </footer>
 </body>
-
 </html>

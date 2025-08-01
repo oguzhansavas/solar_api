@@ -235,33 +235,10 @@ for lat, lon, name in locations:
 
 ### Upcoming Regions
 
-We're actively working to expand forecast coverage to additional regions:
-
-<div class="use-cases">
-  <div class="use-case">
-    <h4>🇩🇪 Germany (Q2 2025)</h4>
-    <p>Extending coverage to include major German solar markets, building on Benelux model architecture.</p>
-  </div>
-  
-  <div class="use-case">
-    <h4>🇫🇷 France (Q3 2025)</h4>
-    <p>French solar regions with model adaptation for Mediterranean climate patterns.</p>
-  </div>
-  
-  <div class="use-case">
-    <h4>🇺🇸 California (Q4 2025)</h4>
-    <p>US West Coast coverage starting with California's renewable energy infrastructure.</p>
-  </div>
-  
-  <div class="use-case">
-    <h4>🌏 Asia-Pacific (2026)</h4>
-    <p>Expansion to major APAC solar markets including Japan, Australia, and India.</p>
-  </div>
-</div>
+- We're actively working to expand forecast coverage to additional regions in Europe.
 
 ### Model Improvements
 
-- **Higher Resolution**: Transition from ~50km to ~10km grid resolution
 - **Extended Horizon**: Expand from 7-day to 14-day forecasts  
 - **Ensemble Models**: Multi-model forecasting for improved accuracy
 - **Real-time Calibration**: Dynamic model adjustment based on recent performance
@@ -276,7 +253,7 @@ We're actively working to expand forecast coverage to additional regions:
 - **Completeness**: >99% data availability for most locations
 - **Temporal Consistency**: Consistent methodology since 1981
 
-### Forecast Accuracy (Benelux)
+### Forecast Accuracy (Benelux) (NEEDS TO BE UPDATED!!!)
 Based on validation against actual solar installations:
 
 | Forecast Period | MAE (W/m²) | RMSE (W/m²) | R² |
@@ -286,7 +263,7 @@ Based on validation against actual solar installations:
 | Day 3 | 78.4 | 112.7 | 0.78 |
 | Day 4-7 | 95.1 | 135.9 | 0.71 |
 
-### Accuracy Factors
+### Accuracy Factors (NEEDS TO BE UPDATED!!!)
 - **Clear Days**: Highest accuracy (>90% correlation)
 - **Cloudy Days**: Moderate accuracy (~75% correlation)  
 - **Transition Periods**: Lower accuracy during weather fronts
@@ -346,23 +323,6 @@ Common error responses when requesting forecast data outside Benelux:
   "detail": "Forecast service is currently limited to Benelux region. Your coordinates (40.7128, -74.0060) are outside the supported area. Please use the historical endpoint for this location."
 }
 ```
-
----
-
-## 📞 Request Coverage Expansion
-
-### Community Input
-We prioritize expansion based on community needs. To request coverage for your region:
-
-1. **GitHub Issues**: Open an issue in our repository with your use case
-2. **Usage Data**: Share expected API usage patterns and requirements
-3. **Local Partnerships**: Help us connect with local weather data providers
-4. **Beta Testing**: Volunteer to test new regional models
-
-### Contact Information
-- **Technical Requests**: [GitHub Issues](https://github.com/oguzhansavas/solar_api/issues)
-- **Business Inquiries**: Contact through [support page]({{ '/support.html' | relative_url }})
-- **Partnership Opportunities**: Reach out for data provider partnerships
 
 <script>
 function copyToClipboard(text) {

@@ -16,6 +16,12 @@
   --border-radius: 8px;
 }
 
+.wrapper {
+  max-width: 1200px;   /* Match or exceed .site-nav’s max-width */
+  margin: 0 auto;
+  width: 100%;
+}
+
 /* Hero Section */
 .hero-section {
   background: var(--solar-gradient);

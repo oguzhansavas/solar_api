@@ -28,7 +28,7 @@ social:
 google_site_verification: # fill in to your verification string
 
 # Theme and appearance
-theme: jekyll-theme-chirpy
+remote_theme: cotes2020/jekyll-theme-chirpy
 
 # Build settings
 timezone: Europe/Amsterdam

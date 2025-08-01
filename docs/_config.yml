@@ -68,11 +68,6 @@ author:
   name: Oguzhan Savas
   email: oguzhansavas359@gmail.com
 
-social:
-  name: Solar Irradiance Forecast API
-  links:
-    - https://github.com/oguzhansavas/solar_api
-
 # Exclude files
 exclude:
   - Gemfile

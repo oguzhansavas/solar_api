@@ -1,5 +1,5 @@
 ---
-layout: default
+layout: page
 title: Solar Irradiance Forecast API
 description: Fast, accurate solar irradiance data and forecasting for renewable energy applications
 ---

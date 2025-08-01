@@ -1,23 +1,58 @@
-# Jekyll configuration for GitHub Pages
-title: Solar Irradiance Forecast API
-description: A FastAPI microservice for retrieving historical solar irradiance and weather data from NASA POWER, and for forecasting solar irradiance using machine learning.
-baseurl: "/solar_api"
-url: "https://oguzhansavas.github.io"
+# Jekyll configuration for Solar API Documentation with Chirpy theme
+lang: en
 
-# Theme configuration
-theme: minima
+# Site Settings
+title: Solar Irradiance Forecast API
+tagline: Fast, accurate solar irradiance data and forecasting for renewable energy applications
+description: >-
+  A FastAPI microservice for retrieving historical solar irradiance and weather data from NASA POWER, 
+  and for forecasting solar irradiance using machine learning.
+
+# URL settings
+url: "https://oguzhansavas.github.io"
+baseurl: "/solar_api"
+
+# Social Links
+github:
+  username: oguzhansavas
+
+social:
+  # Change to your full name.
+  name: Oguzhan Savas
+  email: oguzhansavas359@gmail.com
+  links:
+    - https://twitter.com/oguzhansavas
+    - https://github.com/oguzhansavas
+
+# Site verification (optional)
+google_site_verification: # fill in to your verification string
+
+# Theme and appearance
+theme: jekyll-theme-chirpy
+
+# Build settings
+timezone: Europe/Amsterdam
+
+permalink: /posts/:title/
+# paginate: 10  # Disabled for documentation site
+
 plugins:
   - jekyll-feed
   - jekyll-sitemap
   - jekyll-seo-tag
+  # - jekyll-paginate  # Disabled for documentation site
+  - jekyll-archives
+  - jekyll-include-cache
 
-# Navigation menu
-header_pages:
-  - getting-started.md
-  - api-reference.md
-  - examples.md
-  - coverage.md
-  - support.md
+# Jekyll Archives
+jekyll-archives:
+  enabled: [categories, tags]
+  layouts:
+    category: category
+    tag: tag
+  permalinks:
+    tag: /tags/:name/
+    category: /categories/:name/
 
 # Markdown configuration
 markdown: kramdown
@@ -25,8 +60,45 @@ highlighter: rouge
 kramdown:
   syntax_highlighter: rouge
   syntax_highlighter_opts:
+    css_class: highlight
+    span:
+      line_numbers: false
     block:
       line_numbers: false
+
+# Analytics (optional)
+google_analytics:
+  id: # fill in your Google Analytics ID
+
+# Comments (optional)
+comments:
+  active: # The global switch for posts comments, e.g., 'disqus'.
+
+# Self-hosted static assets (optional)
+assets:
+  self_host:
+    enabled: false
+
+# PWA (optional)
+pwa:
+  enabled: false
+
+# CDN endpoint (optional)
+cdn: 
+
+# Search settings
+search:
+  enabled: true
+
+# Table of Contents
+toc: true
+
+# Custom variables for API documentation
+api_version: "v1"
+api_base_url: "https://solar-api.onrender.com"
+example_lat: 52.3676
+example_lon: 4.9041
+example_location: "Amsterdam, Netherlands"
 
 # Collections
 collections:
@@ -41,34 +113,36 @@ defaults:
       type: "pages"
     values:
       layout: "page"
+      toc: true
   - scope:
       path: ""
       type: "posts"
     values:
       layout: "post"
+      comments: false
+      toc: true
+      pin: false
   - scope:
       path: ""
       type: "endpoints"
     values:
-      layout: "endpoint"
+      layout: "page"
+      toc: true
 
-# Custom variables
-api_version: "v1"
-api_base_url: "https://solar-api.onrender.com"
-example_lat: 52.3676
-example_lon: 4.9041
-example_location: "Amsterdam, Netherlands"
+# Navigation menu (for Chirpy compatibility)
+nav_links:
+  - title: "Getting Started"
+    url: "/getting-started/"
+  - title: "API Reference"
+    url: "/api-reference/"
+  - title: "Examples"
+    url: "/examples/"
+  - title: "Coverage"
+    url: "/coverage/"
+  - title: "Support"
+    url: "/support/"
 
-# SEO
-twitter:
-  username: oguzhansavas
-  card: summary_large_image
-
-author:
-  name: Oguzhan Savas
-  email: oguzhansavas359@gmail.com
-
-# Exclude files
+# Exclude files from processing
 exclude:
   - Gemfile
   - Gemfile.lock
@@ -77,3 +151,5 @@ exclude:
   - .sass-cache/
   - .jekyll-cache/
   - gemfiles/
+  - tools/
+  - README.md

@@ -1,4 +1,5 @@
 ---
 ---
 
-@import "minima";
+@import "main";
+@import url('/solar_api/assets/css/custom.css');

@@ -249,15 +249,9 @@ table tr:nth-child(even) {
   color: var(--solar-orange);
 }
 
-.github-icon {
-  margin-right: 0.3rem;
-  vertical-align: middle;
-}
-
 /* Footer */
 .site-footer {
   background: var(--solar-dark);
-  color: white;
 }
 
 .footer-heading {

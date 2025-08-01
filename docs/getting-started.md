@@ -1,8 +1,11 @@
 ---
 layout: page
 title: Getting Started
+icon: fas fa-rocket
+order: 1
 permalink: /getting-started/
 description: Quick start guide for the Solar Irradiance Forecast API with examples and basic usage patterns.
+toc: true
 ---
 
 ## 🚀 Quick Start

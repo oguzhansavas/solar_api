@@ -114,6 +114,7 @@ defaults:
     values:
       layout: "page"
       toc: true
+      comments: false
   - scope:
       path: ""
       type: "posts"
@@ -122,25 +123,32 @@ defaults:
       comments: false
       toc: true
       pin: false
+      published: true
   - scope:
       path: ""
       type: "endpoints"
     values:
       layout: "page"
       toc: true
+      comments: false
 
-# Navigation menu (for Chirpy compatibility)
-nav_links:
+# Chirpy theme navigation tabs
+tabs:
   - title: "Getting Started"
     url: "/getting-started/"
-  - title: "API Reference"
+    icon: "fas fa-rocket"
+  - title: "API Reference"  
     url: "/api-reference/"
+    icon: "fas fa-book"
   - title: "Examples"
     url: "/examples/"
+    icon: "fas fa-code"
   - title: "Coverage"
     url: "/coverage/"
+    icon: "fas fa-globe"
   - title: "Support"
     url: "/support/"
+    icon: "fas fa-life-ring"
 
 # Exclude files from processing
 exclude:

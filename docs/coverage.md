@@ -1,8 +1,11 @@
 ---
 layout: page
 title: Coverage & Availability
+icon: fas fa-globe
+order: 4
 permalink: /coverage/
 description: Understand the geographical coverage, regional limitations, and data availability for historical and forecast endpoints.
+toc: true
 ---
 
 ## 🌍 Coverage Overview

@@ -1,8 +1,11 @@
 ---
-layout: page
+layout: page  
 title: Support & Community
+icon: fas fa-life-ring
+order: 5
 permalink: /support/
 description: Get help, report issues, and reach out for technical support and collaboration.
+toc: true
 ---
 
 ## 🤝 Getting Help

@@ -1,8 +1,11 @@
 ---
 layout: page
 title: API Reference
+icon: fas fa-book
+order: 2
 permalink: /api-reference/
 description: Complete API reference documentation for the Solar Irradiance Forecast API endpoints, parameters, and responses.
+toc: true
 ---
 
 ## API Overview
@@ -25,54 +28,58 @@ GET /v1/irradiance/historical
 
 ### Parameters
 
-<div class="param-card">
-  <h4>lat <span class="param-type">float</span> <span class="param-required">required</span></h4>
-  <p>Latitude coordinate in decimal degrees (-90 to 90)</p>
-  <p><strong>Example:</strong> <code>{{ site.example_lat }}</code></p>
-</div>
+### Parameters
 
-<div class="param-card">
-  <h4>lon <span class="param-type">float</span> <span class="param-required">required</span></h4>
-  <p>Longitude coordinate in decimal degrees (-180 to 180)</p>
-  <p><strong>Example:</strong> <code>{{ site.example_lon }}</code></p>
-</div>
+> **lat** `float` *required*
+> 
+> Latitude coordinate in decimal degrees (-90 to 90)
+> 
+> **Example:** `{{ site.example_lat }}`
+{: .prompt-info}
 
-<div class="param-card">
-  <h4>start <span class="param-type">string</span> <span class="param-required">required</span></h4>
-  <p>Start date in YYYYMMDD format</p>
-  <p><strong>Example:</strong> <code>20240101</code></p>
-</div>
+> **lon** `float` *required*
+> 
+> Longitude coordinate in decimal degrees (-180 to 180)
+> 
+> **Example:** `{{ site.example_lon }}`
+{: .prompt-info}
 
-<div class="param-card">
-  <h4>end <span class="param-type">string</span> <span class="param-required">required</span></h4>
-  <p>End date in YYYYMMDD format</p>
-  <p><strong>Example:</strong> <code>20240102</code></p>
-</div>
+> **start** `string` *required*
+> 
+> Start date in YYYYMMDD format
+> 
+> **Example:** `20240101`
+{: .prompt-info}
 
-<div class="param-card">
-  <h4>parameters <span class="param-type">string</span> <span class="param-required">required</span></h4>
-  <p>Parameter to retrieve. Available options:</p>
-  <ul>
-    <li><code>total_irradiance</code> - Total solar irradiance (W/m²)</li>
-    <li><code>clear_sky_irradiance</code> - Clear-sky solar irradiance (W/m²)</li>
-    <li><code>temperature</code> - Air temperature (°C)</li>
-    <li><code>wind_speed</code> - Wind speed (m/s)</li>
-    <li><code>relative_humidity</code> - Relative humidity (%)</li>
-    <li><code>precipitation</code> - Precipitation (mm/hour)</li>
-    <li><code>cloud_cover</code> - Cloud cover (%)</li>
-  </ul>
-  <p><strong>Example:</strong> <code>total_irradiance</code></p>
-</div>
+> **end** `string` *required*
+> 
+> End date in YYYYMMDD format
+> 
+> **Example:** `20240102`
+{: .prompt-info}
 
-<div class="param-card">
-  <h4>community <span class="param-type">string</span> <span style="background: #6c757d; color: white; padding: 0.2rem 0.5rem; border-radius: 4px; font-size: 0.8rem; font-weight: 600; margin-left: 0.5rem;">optional</span></h4>
-  <p>NASA POWER community. Options:</p>
-  <ul>
-    <li><code>RE</code> - Renewable Energy (default)</li>
-    <li><code>SB</code> - Sustainable Buildings</li>
-  </ul>
-  <p><strong>Default:</strong> <code>RE</code></p>
-</div>
+> **parameters** `string` *required*
+> 
+> Parameter to retrieve. Available options:
+> - `total_irradiance` - Total solar irradiance (W/m²)
+> - `clear_sky_irradiance` - Clear-sky solar irradiance (W/m²)
+> - `temperature` - Air temperature (°C)
+> - `wind_speed` - Wind speed (m/s)
+> - `relative_humidity` - Relative humidity (%)
+> - `precipitation` - Precipitation (mm/hour)
+> - `cloud_cover` - Cloud cover (%)
+> 
+> **Example:** `total_irradiance`
+{: .prompt-info}
+
+> **community** `string` *optional*
+> 
+> NASA POWER community. Options:
+> - `RE` - Renewable Energy (default)
+> - `SB` - Sustainable Buildings
+> 
+> **Default:** `RE`
+{: .prompt-note}
 
 ### Example Request
 
@@ -142,36 +149,43 @@ GET /v1/irradiance/forecast
 
 ### Parameters
 
-<div class="param-card">
-  <h4>lat <span class="param-type">float</span> <span class="param-required">required</span></h4>
-  <p>Latitude coordinate in decimal degrees (Benelux region only)</p>
-  <p><strong>Example:</strong> <code>{{ site.example_lat }}</code></p>
-</div>
+### Parameters
 
-<div class="param-card">
-  <h4>lon <span class="param-type">float</span> <span class="param-required">required</span></h4>
-  <p>Longitude coordinate in decimal degrees (Benelux region only)</p>
-  <p><strong>Example:</strong> <code>{{ site.example_lon }}</code></p>
-</div>
+> **lat** `float` *required*
+> 
+> Latitude coordinate in decimal degrees (Benelux region only)
+> 
+> **Example:** `{{ site.example_lat }}`
+{: .prompt-info}
 
-<div class="param-card">
-  <h4>start <span class="param-type">string</span> <span class="param-required">required</span></h4>
-  <p>Forecast start datetime in YYYYMMDDHH format (UTC)</p>
-  <p><strong>Example:</strong> <code>2025070800</code> (July 8, 2025 at 08:00 UTC)</p>
-</div>
+> **lon** `float` *required*
+> 
+> Longitude coordinate in decimal degrees (Benelux region only)
+> 
+> **Example:** `{{ site.example_lon }}`
+{: .prompt-info}
 
-<div class="param-card">
-  <h4>end <span class="param-type">string</span> <span class="param-required">required</span></h4>
-  <p>Forecast end datetime in YYYYMMDDHH format (UTC). Maximum 7 days after start.</p>
-  <p><strong>Example:</strong> <code>2025071400</code> (July 14, 2025 at 00:00 UTC)</p>
-</div>
+> **start** `string` *required*
+> 
+> Forecast start datetime in YYYYMMDDHH format (UTC)
+> 
+> **Example:** `2025070800` (July 8, 2025 at 08:00 UTC)
+{: .prompt-info}
+
+> **end** `string` *required*
+> 
+> Forecast end datetime in YYYYMMDDHH format (UTC). Maximum 7 days after start.
+> 
+> **Example:** `2025071400` (July 14, 2025 at 00:00 UTC)
+{: .prompt-info}
 
 ### Coverage Limitations
 
-⚠️ **Important:** The forecast endpoint currently supports only locations within the Benelux region:
-- **Netherlands** (latitude: 50.7 to 53.6, longitude: 3.2 to 7.2)
-- **Belgium** (latitude: 49.5 to 51.5, longitude: 2.5 to 6.4)
-- **Luxembourg** (latitude: 49.4 to 50.2, longitude: 5.7 to 6.5)
+> ⚠️ **Important:** The forecast endpoint currently supports only locations within the Benelux region:
+> - **Netherlands** (latitude: 50.7 to 53.6, longitude: 3.2 to 7.2)
+> - **Belgium** (latitude: 49.5 to 51.5, longitude: 2.5 to 6.4)
+> - **Luxembourg** (latitude: 49.4 to 50.2, longitude: 5.7 to 6.5)
+{: .prompt-warning}
 
 ### Example Request
 

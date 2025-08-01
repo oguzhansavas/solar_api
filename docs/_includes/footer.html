@@ -22,29 +22,6 @@
       </div>
 
       <div class="footer-col footer-col-2">
-        <ul class="social-media-list">
-          {%- if site.github_username -%}
-          <li>
-            {%- include social.html username=site.github_username platform="github" -%}
-          </li>
-          {%- endif -%}
-          {%- if site.twitter_username -%}
-          <li>
-            {%- include social.html username=site.twitter_username platform="twitter" -%}
-          </li>
-          {%- endif -%}
-          <li>
-            <a href="https://github.com/oguzhansavas/solar_api">
-              <svg class="svg-icon">
-                <use xlink:href="{{ '/assets/minima-social-icons.svg#github' | relative_url }}"></use>
-              </svg>
-              <span class="username">Source Code</span>
-            </a>
-          </li>
-        </ul>
-      </div>
-
-      <div class="footer-col footer-col-3">
         <p>{{- site.description | escape -}}</p>
         <p class="footer-links">
           <a href="{{ '/api-reference.html' | relative_url }}">API Reference</a> |

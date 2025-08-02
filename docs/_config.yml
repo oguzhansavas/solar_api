@@ -20,7 +20,9 @@ github:
 timezone: Europe/Amsterdam
 
 # Theme configuration
-theme: just-the-docs
+remote_theme: "just-the-docs/just-the-docs"
+plugins:
+  - jekyll-remote-theme
 
 # Just the Docs configuration
 color_scheme: dark

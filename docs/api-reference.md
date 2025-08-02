@@ -1,11 +1,9 @@
 ---
-layout: page
+layout: default
 title: API Reference
-icon: fas fa-book
-order: 2
+nav_order: 3
 permalink: /api-reference/
 description: Complete API reference documentation for the Solar Irradiance Forecast API endpoints, parameters, and responses.
-toc: true
 ---
 
 ## API Overview

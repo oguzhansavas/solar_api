@@ -1,11 +1,9 @@
 ---
-layout: page
+layout: default
 title: Examples & Use Cases
-icon: fas fa-code
-order: 3
+nav_order: 4
 permalink: /examples/
 description: Real-world examples and practical use cases for the Solar Irradiance Forecast API with code samples in multiple languages.
-toc: true
 ---
 
 ## 🎯 Real-World Use Cases

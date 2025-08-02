@@ -1,4 +1,4 @@
-# Jekyll configuration for Solar API Documentation with Chirpy theme
+# Jekyll configuration for Solar API Documentation with Just the Docs theme
 lang: en
 
 # Site Settings
@@ -16,52 +16,28 @@ baseurl: "/solar_api"
 github:
   username: oguzhansavas
 
-social:
-  # Change to your full name.
-  name: Oguzhan Savas
-  email: oguzhansavas359@gmail.com
-  links:
-    - https://twitter.com/oguzhansavas
-    - https://github.com/oguzhansavas
-
-# Site verification (optional)
-google_site_verification: # fill in to your verification string
-
-# Theme and appearance
-remote_theme: cotes2020/jekyll-theme-chirpy
-
-# Theme settings
-theme_mode: # [light|dark], empty means the theme respects the system color mode preference
-
-# Favicon settings
-favicon: # path to the favicon, /assets/favicon.ico or /assets/img/favicons/
-
-# Avatar settings  
-avatar: # /assets/img/avatar.jpg
-
 # Build settings
 timezone: Europe/Amsterdam
 
-permalink: /posts/:title/
-# paginate: 10  # Disabled for documentation site
+# Theme configuration
+theme: just-the-docs
+
+# Just the Docs configuration
+color_scheme: dark
+search_enabled: true
+heading_anchors: true
+
+# Enable dark mode by default
+gh_edit_link: true
+gh_edit_link_text: "Edit this page on GitHub"
+gh_edit_repository: "https://github.com/oguzhansavas/solar_api"
+gh_edit_branch: "main"
+gh_edit_view_mode: "tree"
 
 plugins:
   - jekyll-feed
   - jekyll-sitemap
   - jekyll-seo-tag
-  # - jekyll-paginate  # Disabled for documentation site
-  - jekyll-archives
-  - jekyll-include-cache
-
-# Jekyll Archives
-jekyll-archives:
-  enabled: [categories, tags]
-  layouts:
-    category: category
-    tag: tag
-  permalinks:
-    tag: /tags/:name/
-    category: /categories/:name/
 
 # Markdown configuration
 markdown: kramdown
@@ -75,33 +51,6 @@ kramdown:
     block:
       line_numbers: false
 
-# Analytics (optional)
-google_analytics:
-  id: # fill in your Google Analytics ID
-
-# Comments (optional)
-comments:
-  active: # The global switch for posts comments, e.g., 'disqus'.
-
-# Self-hosted static assets (optional)
-assets:
-  self_host:
-    enabled: false
-
-# PWA (optional)
-pwa:
-  enabled: false
-
-# CDN endpoint (optional)
-cdn: 
-
-# Search settings
-search:
-  enabled: true
-
-# Table of Contents
-toc: true
-
 # Custom variables for API documentation
 api_version: "v1"
 api_base_url: "https://solar-api.onrender.com"
@@ -109,55 +58,13 @@ example_lat: 52.3676
 example_lon: 4.9041
 example_location: "Amsterdam, Netherlands"
 
-# Collections
-collections:
-  endpoints:
-    output: true
-    permalink: /:collection/:name/
-
 # Default front matter
 defaults:
   - scope:
       path: ""
       type: "pages"
     values:
-      layout: "page"
-      toc: true
-      comments: false
-  - scope:
-      path: ""
-      type: "posts"
-    values:
-      layout: "post"
-      comments: false
-      toc: true
-      pin: false
-      published: true
-  - scope:
-      path: ""
-      type: "endpoints"
-    values:
-      layout: "page"
-      toc: true
-      comments: false
-
-# Chirpy theme navigation tabs
-tabs:
-  - title: "Getting Started"
-    url: "/getting-started/"
-    icon: "fas fa-rocket"
-  - title: "API Reference"  
-    url: "/api-reference/"
-    icon: "fas fa-book"
-  - title: "Examples"
-    url: "/examples/"
-    icon: "fas fa-code"
-  - title: "Coverage"
-    url: "/coverage/"
-    icon: "fas fa-globe"
-  - title: "Support"
-    url: "/support/"
-    icon: "fas fa-life-ring"
+      layout: "default"
 
 # Exclude files from processing
 exclude:

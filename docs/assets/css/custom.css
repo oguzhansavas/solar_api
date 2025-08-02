@@ -22,7 +22,7 @@
 
 /* Side-bar */
 .side-bar{
-  width: 350px;
+  width: 350px !important;
 }
 
 /* Enhanced buttons with solar theme */

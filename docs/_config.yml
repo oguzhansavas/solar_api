@@ -23,23 +23,21 @@ timezone: Europe/Amsterdam
 remote_theme: "just-the-docs/just-the-docs"
 plugins:
   - jekyll-remote-theme
+  - jekyll-feed
+  - jekyll-sitemap
+  - jekyll-seo-tag
 
 # Just the Docs configuration
 color_scheme: dark
 search_enabled: true
 heading_anchors: true
 
-# Enable dark mode by default
+# GitHub integration
 gh_edit_link: true
 gh_edit_link_text: "Edit this page on GitHub"
 gh_edit_repository: "https://github.com/oguzhansavas/solar_api"
 gh_edit_branch: "main"
 gh_edit_view_mode: "tree"
-
-plugins:
-  - jekyll-feed
-  - jekyll-sitemap
-  - jekyll-seo-tag
 
 # Markdown configuration
 markdown: kramdown

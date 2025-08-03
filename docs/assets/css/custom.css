@@ -228,6 +228,10 @@
   border-left-color: var(--solar-accent) !important;
 }
 
+.prompt-note {
+  border-left-color: var(--solar-accent) !important;
+}
+
 .prompt-warning {
   border-left-color: var(--solar-warning) !important;
 }

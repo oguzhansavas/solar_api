@@ -8,6 +8,9 @@ description: >-
   A FastAPI microservice for retrieving historical solar irradiance and weather data from NASA POWER, 
   and for forecasting solar irradiance using machine learning.
 
+# Favicon configuration
+favicon_ico: "/assets/images/solarAPI_logo.png"
+
 # URL settings
 url: "https://oguzhansavas.github.io"
 baseurl: "/solar_api"

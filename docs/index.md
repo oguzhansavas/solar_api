@@ -5,18 +5,9 @@ nav_order: 1
 description: Fast, accurate solar irradiance data and forecasting for renewable energy applications
 ---
 
-## 🚀 Solar Irradiance Forecast API
+## ☀️ Solar Irradiance API
 
-Fast, accurate solar irradiance data and forecasting for renewable energy applications.
-
-<div class="btn-group">
-  <a href="{{ '/getting-started/' | relative_url }}" class="btn btn-primary">
-    <i class="fas fa-rocket"></i> Get Started
-  </a>
-  <a href="{{ '/api-reference/' | relative_url }}" class="btn btn-outline-primary">
-    <i class="fas fa-book"></i> API Reference
-  </a>
-</div>
+Fast, accurate weather data and irradiance forecasting for renewable energy applications.
 
 ## Key Features
 
@@ -32,7 +23,7 @@ Fast, accurate solar irradiance data and forecasting for renewable energy applic
 > **⚡ Fast & Reliable** - Built with FastAPI for high performance. RESTful JSON API with comprehensive error handling and validation.
 {: .prompt-info}
 
-> **📱 Developer Friendly** - Simple HTTP GET requests with intuitive parameter names. No authentication required for public data access.
+> **📱 Developer Friendly** - Simple HTTP GET requests with intuitive parameter names.
 {: .prompt-tip}
 
 > **🔧 Production Ready** - Deployed on Render with automatic scaling. Comprehensive documentation and code examples included.
@@ -114,7 +105,7 @@ curl "{{ site.api_base_url }}/v1/irradiance/historical?lat={{ site.example_lat }
 - **Accuracy**: ML models trained on extensive historical data
 - **Speed**: Sub-second response times for most queries  
 - **No Limits**: Free access for reasonable usage patterns
-- **Support**: Comprehensive documentation and community support
+- **Support**: Comprehensive documentation and support
 
 ## 🚀 Ready to Get Started?
 

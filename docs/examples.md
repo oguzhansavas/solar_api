@@ -20,6 +20,10 @@ Optimize solar panel placement and energy storage systems using historical irrad
 
 Calculate the annual solar energy potential for a rooftop installation in Amsterdam:
 
+<details>
+<summary>🔍 <strong>View Python Code - Annual Solar Potential Analysis</strong></summary>
+<div style="max-height:400px;overflow-y:auto;">
+
 ```python
 import requests
 import pandas as pd
@@ -78,6 +82,9 @@ print(f"Daily Average: {result['average_daily_kwh_m2']:.1f} kWh/m²")
 
 <button class="copy-btn" onclick="copyToClipboard(this.previousElementSibling.textContent)">📋 Copy</button>
 
+</div>
+</details>
+
 ---
 
 ## ⚡ Energy Trading & Grid Management
@@ -87,6 +94,10 @@ Make informed energy trading decisions with precise solar generation forecasts.
 ### Use Case: 7-Day Power Production Forecast
 
 Forecast solar power output for energy trading decisions:
+
+<details>
+<summary>🔍 <strong>View JavaScript Code - 7-Day Power Production Forecast</strong></summary>
+<div style="max-height:400px;overflow-y:auto;">
 
 ```javascript
 class SolarForecastTrader {
@@ -210,6 +221,9 @@ trader.generateTradingStrategy(7).then(strategy => {
 
 <button class="copy-btn" onclick="copyToClipboard(this.previousElementSibling.textContent)">📋 Copy</button>
 
+</div>
+</details>
+
 ---
 
 ## 📊 Research & Analytics
@@ -219,6 +233,10 @@ Analyze solar potential and climate patterns using comprehensive historical data
 ### Use Case: Seasonal Pattern Analysis
 
 Analyze seasonal solar irradiance patterns for climate research:
+
+<details>
+<summary>🔍 <strong>View Python Code - Seasonal Pattern Analysis</strong></summary>
+<div style="max-height:400px;overflow-y:auto;">
 
 ```python
 import requests
@@ -333,6 +351,9 @@ print(f"Best Month for Daily Total: {insights['best_daily_total_month']} ({insig
 
 <button class="copy-btn" onclick="copyToClipboard(this.previousElementSibling.textContent)">📋 Copy</button>
 
+</div>
+</details>
+
 ---
 
 ## 🌤️ Weather Correlation Analysis
@@ -343,6 +364,10 @@ Analyze the relationship between weather conditions and solar irradiance.
 
 Study how cloud cover affects solar irradiance:
 
+<details>
+<summary>🔍 <strong>View Bash Code - Multi-parameter Data Retrieval</strong></summary>
+<div style="max-height:400px;overflow-y:auto;">
+
 ```bash
 # Multi-parameter analysis - Cloud cover vs Solar irradiance
 curl "{{ site.api_base_url }}/v1/irradiance/historical?lat={{ site.example_lat }}&lon={{ site.example_lon }}&start=20240601&end=20240630&parameters=total_irradiance" > irradiance_june.json
@@ -351,6 +376,13 @@ curl "{{ site.api_base_url }}/v1/irradiance/historical?lat={{ site.example_lat }
 ```
 
 <button class="copy-btn" onclick="copyToClipboard(this.previousElementSibling.textContent)">📋 Copy</button>
+
+</div>
+</details>
+
+<details>
+<summary>🔍 <strong>View Python Code - Cloud Cover Impact Analysis</strong></summary>
+<div style="max-height:400px;overflow-y:auto;">
 
 ```python
 import json
@@ -407,6 +439,9 @@ for category in efficiency_by_clouds.index:
 
 <button class="copy-btn" onclick="copyToClipboard(this.previousElementSibling.textContent)">📋 Copy</button>
 
+</div>
+</details>
+
 ---
 
 ## 🔄 Real-Time Monitoring Dashboard
@@ -416,6 +451,10 @@ Build a real-time monitoring system combining historical data with forecasts.
 ### Use Case: Solar Farm Monitoring
 
 Create a monitoring dashboard for solar farm operators:
+
+<details>
+<summary>🔍 <strong>View JavaScript Code - Solar Farm Monitoring Dashboard</strong></summary>
+<div style="max-height:400px;overflow-y:auto;">
 
 ```javascript
 class SolarFarmDashboard {
@@ -575,6 +614,9 @@ dashboard.startMonitoring();
 
 <button class="copy-btn" onclick="copyToClipboard(this.previousElementSibling.textContent)">📋 Copy</button>
 
+</div>
+</details>
+
 ---
 
 ## 📱 Integration Examples
@@ -582,6 +624,10 @@ dashboard.startMonitoring();
 ### Webhook Integration for Alerts
 
 Set up automated alerts based on forecast conditions:
+
+<details>
+<summary>🔍 <strong>View Python Code - Webhook Integration for Alerts</strong></summary>
+<div style="max-height:400px;overflow-y:auto;">
 
 ```python
 import requests
@@ -682,11 +728,18 @@ while True:
 
 <button class="copy-btn" onclick="copyToClipboard(this.previousElementSibling.textContent)">📋 Copy</button>
 
+</div>
+</details>
+
 ---
 
 ## 🔧 Best Practices & Tips
 
 ### Error Handling & Retry Logic
+
+<details>
+<summary>🔍 <strong>View Python Code - Error Handling & Retry Logic</strong></summary>
+<div style="max-height:400px;overflow-y:auto;">
 
 ```python
 import time
@@ -718,7 +771,16 @@ def robust_api_call(url, params):
     return response.json()
 ```
 
+<button class="copy-btn" onclick="copyToClipboard(this.previousElementSibling.textContent)">📋 Copy</button>
+
+</div>
+</details>
+
 ### Data Caching Strategy
+
+<details>
+<summary>🔍 <strong>View Python Code - Data Caching Strategy</strong></summary>
+<div style="max-height:400px;overflow-y:auto;">
 
 ```python
 import json
@@ -753,6 +815,11 @@ class APICache:
         with open(cache_file, 'w') as f:
             json.dump(data, f)
 ```
+
+<button class="copy-btn" onclick="copyToClipboard(this.previousElementSibling.textContent)">📋 Copy</button>
+
+</div>
+</details>
 
 <script>
 function copyToClipboard(text) {

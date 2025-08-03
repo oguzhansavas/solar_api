@@ -109,6 +109,14 @@
   }
 }
 
+@media (min-width: 50rem) {
+    .main-header {
+        display: flex;
+        justify-content: space-between;
+        height: 64px;
+    }
+}
+
 /* Enhanced buttons with solar theme */
 .btn-primary {
   background-color: var(--solar-primary);

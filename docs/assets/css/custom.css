@@ -50,8 +50,8 @@
 
 @media (min-width: 50rem) {
     .site-header {
-        height: 4.5rem;
-        max-height: 4.5rem;
+        height: 4rem;
+        max-height: 4rem;
         border-bottom: 1px solid #44434d;
     }
 }

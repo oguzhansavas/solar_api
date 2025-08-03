@@ -22,7 +22,7 @@ Calculate the annual solar energy potential for a rooftop installation in Amster
 
 <details>
 <summary>🔍 <strong>View Python Code - Annual Solar Potential Analysis</strong></summary>
-<div style="max-height:400px;overflow-y:auto;">
+<div style="max-height:400px;overflow-y:auto;" markdown="1">
 
 ```python
 import requests
@@ -97,7 +97,7 @@ Forecast solar power output for energy trading decisions:
 
 <details>
 <summary>🔍 <strong>View JavaScript Code - 7-Day Power Production Forecast</strong></summary>
-<div style="max-height:400px;overflow-y:auto;">
+<div style="max-height:400px;overflow-y:auto;" markdown="1">
 
 ```javascript
 class SolarForecastTrader {
@@ -236,7 +236,7 @@ Analyze seasonal solar irradiance patterns for climate research:
 
 <details>
 <summary>🔍 <strong>View Python Code - Seasonal Pattern Analysis</strong></summary>
-<div style="max-height:400px;overflow-y:auto;">
+<div style="max-height:400px;overflow-y:auto;" markdown="1">
 
 ```python
 import requests
@@ -366,7 +366,7 @@ Study how cloud cover affects solar irradiance:
 
 <details>
 <summary>🔍 <strong>View Bash Code - Multi-parameter Data Retrieval</strong></summary>
-<div style="max-height:400px;overflow-y:auto;">
+<div style="max-height:400px;overflow-y:auto;" markdown="1">
 
 ```bash
 # Multi-parameter analysis - Cloud cover vs Solar irradiance
@@ -382,7 +382,7 @@ curl "{{ site.api_base_url }}/v1/irradiance/historical?lat={{ site.example_lat }
 
 <details>
 <summary>🔍 <strong>View Python Code - Cloud Cover Impact Analysis</strong></summary>
-<div style="max-height:400px;overflow-y:auto;">
+<div style="max-height:400px;overflow-y:auto;" markdown="1">
 
 ```python
 import json
@@ -454,7 +454,7 @@ Create a monitoring dashboard for solar farm operators:
 
 <details>
 <summary>🔍 <strong>View JavaScript Code - Solar Farm Monitoring Dashboard</strong></summary>
-<div style="max-height:400px;overflow-y:auto;">
+<div style="max-height:400px;overflow-y:auto;" markdown="1">
 
 ```javascript
 class SolarFarmDashboard {
@@ -627,7 +627,7 @@ Set up automated alerts based on forecast conditions:
 
 <details>
 <summary>🔍 <strong>View Python Code - Webhook Integration for Alerts</strong></summary>
-<div style="max-height:400px;overflow-y:auto;">
+<div style="max-height:400px;overflow-y:auto;" markdown="1">
 
 ```python
 import requests
@@ -739,7 +739,7 @@ while True:
 
 <details>
 <summary>🔍 <strong>View Python Code - Error Handling & Retry Logic</strong></summary>
-<div style="max-height:400px;overflow-y:auto;">
+<div style="max-height:400px;overflow-y:auto;" markdown="1">
 
 ```python
 import time
@@ -780,7 +780,7 @@ def robust_api_call(url, params):
 
 <details>
 <summary>🔍 <strong>View Python Code - Data Caching Strategy</strong></summary>
-<div style="max-height:400px;overflow-y:auto;">
+<div style="max-height:400px;overflow-y:auto;" markdown="1">
 
 ```python
 import json

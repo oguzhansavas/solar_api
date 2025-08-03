@@ -48,6 +48,14 @@
   }
 }
 
+@media (min-width: 50rem) {
+    .site-header {
+        height: 4.5rem;
+        max-height: 4.5rem;
+        border-bottom: 1px solid #44434d;
+    }
+}
+
 /* Improved spacing for sidebar content */
 .side-bar .site-title {
   padding-left: 1.5rem !important;

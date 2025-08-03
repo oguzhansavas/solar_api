@@ -100,46 +100,6 @@ if data:
 
 <button class="copy-btn" onclick="copyToClipboard(this.previousElementSibling.textContent)">📋 Copy</button>
 
-### JavaScript Example
-
-```javascript
-// Forecast data example
-async function getForecastData(lat, lon, startDateTime, endDateTime) {
-    const url = `{{ site.api_base_url }}/v1/irradiance/forecast`;
-    const params = new URLSearchParams({
-        lat: lat,
-        lon: lon,
-        start: startDateTime,
-        end: endDateTime
-    });
-    
-    try {
-        const response = await fetch(`${url}?${params}`);
-        
-        if (!response.ok) {
-            throw new Error(`HTTP error! status: ${response.status}`);
-        }
-        
-        const data = await response.json();
-        return data;
-    } catch (error) {
-        console.error('Error fetching forecast data:', error);
-        return null;
-    }
-}
-
-// Usage
-getForecastData({{ site.example_lat }}, {{ site.example_lon }}, "2025070800", "2025070900")
-    .then(data => {
-        if (data) {
-            console.log('Forecast data:', data);
-            console.log('Number of forecast points:', Object.keys(data.forecast).length);
-        }
-    });
-```
-
-<button class="copy-btn" onclick="copyToClipboard(this.previousElementSibling.textContent)">📋 Copy</button>
-
 ## 📋 Parameter Reference
 
 ### Required Parameters
@@ -202,12 +162,10 @@ All endpoints require these basic parameters:
 
 ### Best Practices
 
-> **📋 Best Practices**
 > 1. **Use appropriate date ranges**: Don't request more data than needed
 > 2. **Cache responses**: Store frequently accessed data locally
 > 3. **Handle errors gracefully**: Always check response status codes
 > 4. **Respect the service**: Avoid excessive concurrent requests
-{: .prompt-info}
 
 ### Error Handling
 
@@ -241,13 +199,11 @@ Now that you're familiar with the basics:
 
 ## 💡 Tips for Success
 
-> **💡 Pro Tips**
 > - Start with historical data to understand the API structure
 > - Use the health endpoint (`/health`) to verify API availability
 > - Test your coordinates with small date ranges first
 > - Consider time zones: all data is in UTC
 > - For production use, implement proper error handling and retries
-{: .prompt-tip}
 
 <script>
 function copyToClipboard(text) {
